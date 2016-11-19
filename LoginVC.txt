@@ -1,0 +1,146 @@
+*** Settings ***
+Resource        ResourceNew/checkpoint_resource.html
+Resource        ResourceNew/object_resource.html
+Resource        ResourceNew/configuration.html
+Library         Selenium Library
+
+*** Test Cases ***
+No existing session VC
+    [Tags]  LoginVC1
+    Set Selenium Timeout  300
+    Open Browser  ${LOGIN URL VC}  ${BROWSER}
+    Maximize Browser Window
+    Input Text  userId  ${LoginUserVC}
+    Input Text  password  ${LoginPasswordVC}
+    Click Image  css=div.submitBtn
+    Input Text  answer1  test
+    Input Text  answer2  test
+    Click Image  css=div.submit.submitBtn
+    Page Should Contain  wine & dine
+    Page Should Contain  spa
+    Page Should Contain  travel & hotel
+    Page Should Contain  sports & entertainment
+    Page Should Contain  Welcome
+    Page Should Contain Link  Profile.do
+    Page Should Contain Link  Logout.do
+    [Teardown]  Log Out
+
+With an existing active session VC
+    [Tags]  LoginVC2
+    Set Selenium Timeout  300
+    Open Browser  ${LOGIN URL VC}  ${BROWSER2}
+    Maximize Browser Window
+    Input Text  userId  ${LoginUserVC}
+    Input Text  password  ${LoginPasswordVC}
+    Click Image  css=div.submitBtn
+    Input Text  answer1  test
+    Input Text  answer2  test
+    Click Image  css=div.submit.submitBtn
+    Page Should Contain  wine & dine
+    Page Should Contain  spa
+    Page Should Contain  travel & hotel
+    Page Should Contain  sports & entertainment
+    Page Should Contain  Welcome
+    Page Should Contain Link  Profile.do
+    Page Should Contain Link  Logout.do
+    Open Browser  ${LOGIN URL VC}  ${BROWSER}
+    Maximize Browser Window
+    Input Text  userId  ${LoginUserVC}
+    Input Text  password  ${LoginPasswordVC}
+    Click Image  css=div.submitBtn
+    Page Should Contain  You still have an active session. Please terminate the other session or try again later.
+    Sleep  20m
+
+With an existing active session --> session times out VC
+    [Tags]  LoginVC3
+    Set Selenium Timeout  300
+    Open Browser  ${LOGIN URL VC}  ${BROWSER2}
+    Maximize Browser Window
+    Input Text  userId  ${LoginUserVC}
+    Input Text  password  ${LoginPasswordVC}
+    Click Image  css=div.submitBtn
+    Comment  Input Text  answer1  test
+    Comment  Input Text  answer2  test
+    Comment  Click Image  css=div.submit.submitBtn
+    Page Should Contain  wine & dine
+    Page Should Contain  spa
+    Page Should Contain  travel & hotel
+    Page Should Contain  sports & entertainment
+    Page Should Contain  Welcome
+    Page Should Contain Link  Profile.do
+    Page Should Contain Link  Logout.do
+    Sleep  20m
+    Open Browser  ${LOGIN URL VC}  ${BROWSER}
+    Maximize Browser Window
+    Input Text  userId  ${LoginUserVC}
+    Input Text  password  ${LoginPasswordVC}
+    Click Image  css=div.submitBtn
+    Page Should Contain  wine & dine
+    Page Should Contain  spa
+    Page Should Contain  travel & hotel
+    Page Should Contain  sports & entertainment
+    Page Should Contain  Welcome
+    Page Should Contain Link  Profile.do
+    Page Should Contain Link  Logout.do
+    [Teardown]  Log Out
+
+With an existion active session --> user logs out VC
+    [Tags]  LoginVC4
+    Set Selenium Timeout  300
+    Open Browser  ${LOGIN URL VC}  ${BROWSER2}
+    Maximize Browser Window
+    Input Text  userId  ${LoginUserVC}
+    Input Text  password  ${LoginPasswordVC}
+    Click Image  css=div.submitBtn
+    Comment  Input Text  answer1  test
+    Comment  Input Text  answer2  test
+    Comment  Click Image  css=div.submit.submitBtn
+    Page Should Contain  wine & dine
+    Page Should Contain  spa
+    Page Should Contain  travel & hotel
+    Page Should Contain  sports & entertainment
+    Page Should Contain  Welcome
+    Page Should Contain Link  Profile.do
+    Page Should Contain Link  Logout.do
+    Log Out
+    Open Browser  ${LOGIN URL VC}  ${BROWSER}
+    Maximize Browser Window
+    Input Text  userId  ${LoginUserVC}
+    Input Text  password  ${LoginPasswordVC}
+    Click Image  css=div.submitBtn
+    Page Should Contain  wine & dine
+    Page Should Contain  spa
+    Page Should Contain  travel & hotel
+    Page Should Contain  sports & entertainment
+    Page Should Contain  Welcome
+    Page Should Contain Link  Profile.do
+    Page Should Contain Link  Logout.do
+    [Teardown]  Log Out
+
+With an existing active session --> browser is closed / machine restarted VC
+    [Tags]  LoginVC5
+    Set Selenium Timeout  300
+    Open Browser  ${LOGIN URL VC}  ${BROWSER}
+    Maximize Browser Window
+    Input Text  userId  ${LoginUserVC}
+    Input Text  password  ${LoginPasswordVC}
+    Click Image  css=div.submitBtn
+    Comment  Input Text  answer1  test
+    Comment  Input Text  answer2  test
+    Comment  Click Image  css=div.submit.submitBtn
+    Page Should Contain  wine & dine
+    Page Should Contain  spa
+    Page Should Contain  travel & hotel
+    Page Should Contain  sports & entertainment
+    Page Should Contain  Welcome
+    Page Should Contain Link  Profile.do
+    Page Should Contain Link  Logout.do
+    Close Browser
+    Open Browser  ${LOGIN URL VC}  ${BROWSER}
+    Maximize Browser Window
+    Input Text  userId  ${LoginUserVC}
+    Input Text  password  ${LoginPasswordVC}
+    Click Image  css=div.submitBtn
+    Page Should Contain  You still have an active session. Please terminate the other session or try again later.
+    Sleep  20m
+

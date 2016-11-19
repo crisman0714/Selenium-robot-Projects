@@ -1,0 +1,50 @@
+*** Settings ***
+Resource        ResourceNew/checkpoint_resource.html
+Library         SeleniumLibrary
+Resource        ResourceNew/object_resource.html
+Resource        ResourceNew/configuration.html
+
+*** Test Cases ***
+Static Pages links are working (Contacts footer pages)
+    [Tags]  FooterPages  Prod1
+    [Setup]  StartingUp Browser and URL
+    Click Link  home
+    Click Link  Contact
+    Page Should Contain  Contact Us
+    Page Should Contain  How You Can Reach Us
+    Page Should Contain  Visa Canada Corporation
+
+Static Pages links are working (FAQ footer pages)
+    [Tags]  FooterPages  Prod1
+    [Setup]  StartingUp Browser and URL
+    Click Link  home
+    Click Link  Frequently Asked Questions
+    Page Should Contain  Overview
+    Page Should Contain  The Visa Infinite Concierge Service
+    Page Should Contain  Frequently Asked Questions
+
+Static Pages links are working (Privacy Policy footer pages)
+    [Tags]  FooterPages  Prod1
+    [Setup]  StartingUp Browser and URL
+    Click Link  home
+    Click Link  Privacy Policy
+    Page Should Contain  Visa Canada Concierge PRIVACY POLICY
+    Page Should Contain  OVERVIEW
+    Page Should Contain  Applicability of this Privacy Policy
+    Page Should Contain  NOTICE
+    Page Should Contain  Information Visa collects
+    Page Should Contain  How Visa uses your information
+    Page Should Contain  To whom Visa discloses your information
+    Page Should Contain  ACCESS AND DATA RETENTION
+
+Static Pages links are working (Term of Use footer pages)
+    [Tags]  FooterPages  Prod1
+    [Setup]  StartingUp Browser and URL
+    Click Link  home
+    Click Link  Website Terms of Use
+    Page Should Contain  VISA CANADA CONCIERGE TERMS OF SERVICE
+    Page Should Contain  Canadian Visa Cardholder Use
+    Page Should Contain  Registration and Account Security
+    Page Should Contain  No Product Or Merchant Endorsements
+    Page Should Contain  Privacy
+

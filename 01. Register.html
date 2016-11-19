@@ -1,0 +1,1070 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="RIDE" /> 
+<meta name="rf-template" content="False" /> 
+<style type="text/css">
+html {
+  font-family: Arial,Helvetica,sans-serif;
+  background-color: white;
+  color: black;
+}
+table {
+  border-collapse: collapse;
+  empty-cells: show;
+  margin: 1em 0em;
+  border: 1px solid black;
+}
+th, td {
+  border: 1px solid black;
+  padding: 0.1em 0.2em;
+  height: 1.5em;
+  width: 12em;
+}
+th {
+  background-color: rgb(192, 192, 192);
+  color: black;
+  height: 1.7em;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 0.1em;
+}
+td.name {
+  background-color: rgb(240, 240, 240);
+  letter-spacing: 0.1em;
+}
+td.name, th.name {
+  width: 10em;
+}
+</style>
+<title>01. Register</title>
+</head>
+<body>
+<h1>01. Register</h1>
+<table id="settings" border="1">
+<tr>
+<th class="name">Setting</th>
+<th colspan="4">Value</th>
+</tr>
+<tr>
+<td class="name">Force Tags</td>
+<td>Register</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name">Library</td>
+<td>SeleniumLibrary</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name">Resource</td>
+<td>ResourceNew/checkpoint_resource.html</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name">Resource</td>
+<td>ResourceNew/object_resource.html</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name">Resource</td>
+<td>ResourceNew/configuration.html</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table>
+<table id="variables" border="1"></table>
+<table id="testcases" border="1">
+<tr>
+<th class="name">Test Case</th>
+<th>Action</th>
+<th colspan="3">Arguments</th>
+</tr>
+<tr>
+<td class="name"><a name="test_Register With Password And User Full Name">Register With Password And User Full Name</a></td>
+<td>[Tags]</td>
+<td>Prod</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>[Setup]</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Set Selenium Timeout</td>
+<td>300</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Open Browser</td>
+<td>${LOGIN URL}</td>
+<td>${BROWSER}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Maximize Browser Window</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Click Link</td>
+<td>VisaLogin.do?program=visacanada</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Title Should Be</td>
+<td>Visa Infinite Concierge -</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Click Link</td>
+<td>click here</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Text</td>
+<td>cardNo</td>
+<td>4514014810286726</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Select From List</td>
+<td>expirationMonth</td>
+<td>07</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Select From List</td>
+<td>expirationYear</td>
+<td>2014</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Text</td>
+<td>email</td>
+<td>sample@gmail.com</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Text</td>
+<td>firstName</td>
+<td>Cris</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Text</td>
+<td>lastName</td>
+<td>Manuel</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Text</td>
+<td>addrLine1</td>
+<td>81st</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Text</td>
+<td>city</td>
+<td>manila</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Select From List</td>
+<td>state</td>
+<td>Alberta</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Text</td>
+<td>zip</td>
+<td>w3s3ws</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Text</td>
+<td>phoneAreaCode</td>
+<td>908</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Text</td>
+<td>phoneNo</td>
+<td>8908989</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Select Checkbox</td>
+<td>receiveNonMarketingEmail</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Click Image</td>
+<td>css=div.submitBtn</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Page Should Contain</td>
+<td>Terms of Use and Privacy Policy</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"><a name="test_Non - Eligible Card - unable to register">Non - Eligible Card - unable to register</a></td>
+<td>[Tags]</td>
+<td>Prod</td>
+<td>nonEligible</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Set Selenium Timeout</td>
+<td>300</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Open Browser</td>
+<td>${LOGIN URL}</td>
+<td>${BROWSER}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Maximize Browser Window</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Click Link</td>
+<td>VisaLogin.do?program=visacanada</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Title Should Be</td>
+<td>Visa Infinite Concierge -</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Click Link</td>
+<td>click here</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Text</td>
+<td>cardNo</td>
+<td>4512210002222222</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Select From List</td>
+<td>expirationMonth</td>
+<td>07</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Select From List</td>
+<td>expirationYear</td>
+<td>2014</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Text</td>
+<td>email</td>
+<td>sample@gmail.com</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Text</td>
+<td>firstName</td>
+<td>Cris</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Text</td>
+<td>lastName</td>
+<td>Manuel</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Text</td>
+<td>addrLine1</td>
+<td>81st</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Text</td>
+<td>city</td>
+<td>manila</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Select From List</td>
+<td>state</td>
+<td>Alberta</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Text</td>
+<td>zip</td>
+<td>w3s3ws</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Text</td>
+<td>phoneAreaCode</td>
+<td>908</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Text</td>
+<td>phoneNo</td>
+<td>8908989</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Select Checkbox</td>
+<td>receiveNonMarketingEmail</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Click Image</td>
+<td>css=div.submitBtn</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Page Should Contain</td>
+<td>Your card number does not appear to be a valid Visa card. Please check the number and try again.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"><a name="test_Eligible but invalid Card">Eligible but invalid Card</a></td>
+<td>[Tags]</td>
+<td>Prod</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Set Selenium Timeout</td>
+<td>300</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Open Browser</td>
+<td>${LOGIN URL}</td>
+<td>${BROWSER}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Maximize Browser Window</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Click Link</td>
+<td>VisaLogin.do?program=visacanada</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Title Should Be</td>
+<td>Visa Infinite Concierge -</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Click Link</td>
+<td>click here</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Text</td>
+<td>cardNo</td>
+<td>4500031234567890</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Select From List</td>
+<td>expirationMonth</td>
+<td>07</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Select From List</td>
+<td>expirationYear</td>
+<td>2014</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Text</td>
+<td>email</td>
+<td>sample@gmail.com</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Text</td>
+<td>firstName</td>
+<td>Cris</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Text</td>
+<td>lastName</td>
+<td>Manuel</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Text</td>
+<td>addrLine1</td>
+<td>81st</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Text</td>
+<td>city</td>
+<td>manila</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Select From List</td>
+<td>state</td>
+<td>Alberta</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Text</td>
+<td>zip</td>
+<td>w3s3ws</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Text</td>
+<td>phoneAreaCode</td>
+<td>908</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Text</td>
+<td>phoneNo</td>
+<td>8908989</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Select Checkbox</td>
+<td>receiveNonMarketingEmail</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Click Image</td>
+<td>css=div.submitBtn</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Page Should Contain</td>
+<td>Your card number does not appear to be a valid Visa card. Please check the number and try again.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"><a name="test_Infinite card but not canada">Infinite card but not canada</a></td>
+<td>Set Selenium Timeout</td>
+<td>300</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Open Browser</td>
+<td>${LOGIN URL}</td>
+<td>${BROWSER}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Maximize Browser Window</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Click Link</td>
+<td>VisaLogin.do?program=visacanada</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Title Should Be</td>
+<td>Visa Infinite Concierge -</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Click Link</td>
+<td>click here</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Text</td>
+<td>cardNo</td>
+<td>4081150000000007</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Select From List</td>
+<td>expirationMonth</td>
+<td>07</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Select From List</td>
+<td>expirationYear</td>
+<td>2014</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Text</td>
+<td>email</td>
+<td>sample@gmail.com</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Text</td>
+<td>firstName</td>
+<td>Cris</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Text</td>
+<td>lastName</td>
+<td>Manuel</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Text</td>
+<td>addrLine1</td>
+<td>81st</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Text</td>
+<td>city</td>
+<td>manila</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Select From List</td>
+<td>state</td>
+<td>Alberta</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Text</td>
+<td>zip</td>
+<td>w3s3ws</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Text</td>
+<td>phoneAreaCode</td>
+<td>908</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Text</td>
+<td>phoneNo</td>
+<td>8908989</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Select Checkbox</td>
+<td>receiveNonMarketingEmail</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Click Image</td>
+<td>css=div.submitBtn</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Page Should Contain</td>
+<td>The card you entered is not eligible.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"><a name="test_unable to register an exisitng email address">unable to register an exisitng email address</a></td>
+<td>[Tags]</td>
+<td>email</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Set Selenium Timeout</td>
+<td>300</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Open Browser</td>
+<td>${LOGIN URL}</td>
+<td>${BROWSER}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Maximize Browser Window</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Click Link</td>
+<td>VisaLogin.do?program=visacanada</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Title Should Be</td>
+<td>Visa Infinite Concierge -</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Click Link</td>
+<td>click here</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Text</td>
+<td>cardNo</td>
+<td>4514014810286726</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Select From List</td>
+<td>expirationMonth</td>
+<td>07</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Select From List</td>
+<td>expirationYear</td>
+<td>2014</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Text</td>
+<td>email</td>
+<td>cmanuel@efficio.us.com</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Text</td>
+<td>firstName</td>
+<td>Cris</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Text</td>
+<td>lastName</td>
+<td>Manuel</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Text</td>
+<td>addrLine1</td>
+<td>81st</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Text</td>
+<td>city</td>
+<td>manila</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Select From List</td>
+<td>state</td>
+<td>Alberta</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Text</td>
+<td>zip</td>
+<td>w3s3ws</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Text</td>
+<td>phoneAreaCode</td>
+<td>908</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Text</td>
+<td>phoneNo</td>
+<td>8908989</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Select Checkbox</td>
+<td>receiveNonMarketingEmail</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Click Image</td>
+<td>css=div.submitBtn</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Page Should Contain</td>
+<td>This email address is already registered with another profile. Please use a different email address.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"><a name="test_Unable to register an exisitng card number">Unable to register an exisitng card number</a></td>
+<td>[Tags]</td>
+<td>usedcard</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Set Selenium Timeout</td>
+<td>300</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Open Browser</td>
+<td>${LOGIN URL}</td>
+<td>${BROWSER}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Maximize Browser Window</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Click Link</td>
+<td>VisaLogin.do?program=visacanada</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Title Should Be</td>
+<td>Visa Infinite Concierge -</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Click Link</td>
+<td>click here</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Text</td>
+<td>cardNo</td>
+<td>4538264603326401</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Select From List</td>
+<td>expirationMonth</td>
+<td>07</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Select From List</td>
+<td>expirationYear</td>
+<td>2014</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Text</td>
+<td>email</td>
+<td>sample@gmail.com</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Text</td>
+<td>firstName</td>
+<td>Cris</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Text</td>
+<td>lastName</td>
+<td>Manuel</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Text</td>
+<td>addrLine1</td>
+<td>81st</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Text</td>
+<td>city</td>
+<td>manila</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Select From List</td>
+<td>state</td>
+<td>Alberta</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Text</td>
+<td>zip</td>
+<td>w3s3ws</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Text</td>
+<td>phoneAreaCode</td>
+<td>908</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Text</td>
+<td>phoneNo</td>
+<td>8908989</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Select Checkbox</td>
+<td>receiveNonMarketingEmail</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Click Image</td>
+<td>css=div.submitBtn</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Page Should Contain</td>
+<td>The card number is registered with another profile.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table>
+<table id="keywords" border="1"></table>
+</body>
+</html>

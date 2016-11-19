@@ -1,0 +1,525 @@
+*** Settings ***
+Library         SeleniumLibrary
+Resource        ResourceNew/checkpoint_resource.html
+Resource        ResourceNew/object_resource.html
+Resource        ResourceNew/configuration.html
+
+*** Test Cases ***
+Profile Verification
+    [Tags]  Profile  Prod
+    Set Selenium Timeout  300
+    Open Browser  ${LOGIN URL}  ${BROWSER}
+    Maximize Browser Window
+    Click Link  VisaLogin.do?program=visacanada
+    Title Should Be  Visa Infinite Concierge -
+    Input Text  userId  ${LoginUser}
+    Input Text  password  ${LoginPassword}
+    Click Image  css=div.submitBtn
+    Comment  Input Text  answer1  test
+    Comment  Input Text  answer2  test
+    Comment  Click Image  css=div.submit.submitBtn
+    Page Should Contain Image  content/default/images/promotions/home/WineCAHome.jpg  Display wine and dine
+    Page Should Contain Image  content/default/images/promotions/home/TravelCAHome.jpg  Display Travel
+    Page Should Contain Image  content/default/images/promotions/home/ShoppingCAHome.jpg  Display Shopping
+    Page Should Contain Image  content/default/images/promotions/home/SportsCAHome.jpg  Dispayed Sport
+    Page Should Contain  wine & dine
+    Page Should Contain  spa
+    Page Should Contain  travel & hotel
+    Page Should Contain  sports & entertainment
+    Click Link  My profile
+    Page Should Contain  Contact
+    Page Should Contain  Personal and Family
+    Page Should Contain  Billing
+    Page Should Contain  Shipping
+    Page Should Contain  History
+
+View Contacts Page
+    [Tags]  Profile  Prod
+    Set Selenium Timeout  300
+    Open Browser  ${LOGIN URL}  ${BROWSER}
+    Maximize Browser Window
+    Click Link  VisaLogin.do?program=visacanada
+    Title Should Be  Visa Infinite Concierge -
+    Input Text  userId  ${LoginUser}
+    Input Text  password  ${LoginPassword}
+    Click Image  css=div.submitBtn
+    Comment  Input Text  answer1  test
+    Comment  Input Text  answer2  test
+    Comment  Click Image  css=div.submit.submitBtn
+    Page Should Contain Image  content/default/images/promotions/home/WineCAHome.jpg  Display wine and dine
+    Page Should Contain Image  content/default/images/promotions/home/TravelCAHome.jpg  Display Travel
+    Page Should Contain Image  content/default/images/promotions/home/ShoppingCAHome.jpg  Display Shopping
+    Page Should Contain Image  content/default/images/promotions/home/SportsCAHome.jpg  Dispayed Sport
+    Page Should Contain  wine & dine
+    Page Should Contain  spa
+    Page Should Contain  travel & hotel
+    Page Should Contain  sports & entertainment
+    Click Link  My profile
+    Click Link  Contact
+    Page Should Contain  Contact Information
+    Page Should Contain  Communication Preferences
+
+View Profile Summary Page
+    [Tags]  Profile  Prod
+    Set Selenium Timeout  300
+    Open Browser  ${LOGIN URL}  ${BROWSER}
+    Maximize Browser Window
+    Click Link  VisaLogin.do?program=visacanada
+    Title Should Be  Visa Infinite Concierge -
+    Input Text  userId  ${LoginUser}
+    Input Text  password  ${LoginPassword}
+    Click Image  css=div.submitBtn
+    Comment  Input Text  answer1  test
+    Comment  Input Text  answer2  test
+    Comment  Click Image  css=div.submit.submitBtn
+    Page Should Contain Image  content/default/images/promotions/home/WineCAHome.jpg  Display wine and dine
+    Page Should Contain Image  content/default/images/promotions/home/TravelCAHome.jpg  Display Travel
+    Page Should Contain Image  content/default/images/promotions/home/ShoppingCAHome.jpg  Display Shopping
+    Page Should Contain Image  content/default/images/promotions/home/SportsCAHome.jpg  Dispayed Sport
+    Page Should Contain  wine & dine
+    Page Should Contain  spa
+    Page Should Contain  travel & hotel
+    Page Should Contain  sports & entertainment
+    Click Link  My profile
+    Click Link  Summary
+    Page Should Contain  Contact Information
+    Page Should Contain  Recent Requests
+    Page Should Contain  Billing Information
+    Page Should Contain  Shipping Address
+    Page Should Contain  Opting Out of Your Profile
+
+View Personal/Family Page
+    [Tags]  Profile  Prod
+    Set Selenium Timeout  300
+    Open Browser  ${LOGIN URL}  ${BROWSER}
+    Maximize Browser Window
+    Click Link  VisaLogin.do?program=visacanada
+    Title Should Be  Visa Infinite Concierge -
+    Input Text  userId  ${LoginUser}
+    Input Text  password  ${LoginPassword}
+    Click Image  css=div.submitBtn
+    Comment  Input Text  answer1  test
+    Comment  Input Text  answer2  test
+    Comment  Click Image  css=div.submit.submitBtn
+    Page Should Contain Image  content/default/images/promotions/home/WineCAHome.jpg  Display wine and dine
+    Page Should Contain Image  content/default/images/promotions/home/TravelCAHome.jpg  Display Travel
+    Page Should Contain Image  content/default/images/promotions/home/ShoppingCAHome.jpg  Display Shopping
+    Page Should Contain Image  content/default/images/promotions/home/SportsCAHome.jpg  Dispayed Sport
+    Page Should Contain  wine & dine
+    Page Should Contain  spa
+    Page Should Contain  travel & hotel
+    Page Should Contain  sports & entertainment
+    Click Link  My profile
+    Click Link  Personal and Family
+    Page Should Contain  Personal and Family Information
+
+View Billing Page
+    [Tags]  Profile  Prod
+    Set Selenium Timeout  300
+    Open Browser  ${LOGIN URL}  ${BROWSER}
+    Maximize Browser Window
+    Click Link  VisaLogin.do?program=visacanada
+    Title Should Be  Visa Infinite Concierge -
+    Input Text  userId  ${LoginUser}
+    Input Text  password  ${LoginPassword}
+    Click Image  css=div.submitBtn
+    Comment  Input Text  answer1  test
+    Comment  Input Text  answer2  test
+    Comment  Click Image  css=div.submit.submitBtn
+    Page Should Contain Image  content/default/images/promotions/home/WineCAHome.jpg  Display wine and dine
+    Page Should Contain Image  content/default/images/promotions/home/TravelCAHome.jpg  Display Travel
+    Page Should Contain Image  content/default/images/promotions/home/ShoppingCAHome.jpg  Display Shopping
+    Page Should Contain Image  content/default/images/promotions/home/SportsCAHome.jpg  Dispayed Sport
+    Page Should Contain  wine & dine
+    Page Should Contain  spa
+    Page Should Contain  travel & hotel
+    Page Should Contain  sports & entertainment
+    Click Link  My profile
+    Click Link  Billing
+    Page Should Contain  Billing Information
+
+View Shipping Page
+    [Tags]  Profile  Prod
+    Set Selenium Timeout  300
+    Open Browser  ${LOGIN URL}  ${BROWSER}
+    Maximize Browser Window
+    Click Link  VisaLogin.do?program=visacanada
+    Title Should Be  Visa Infinite Concierge -
+    Input Text  userId  ${LoginUser}
+    Input Text  password  ${LoginPassword}
+    Click Image  css=div.submitBtn
+    Comment  Input Text  answer1  test
+    Comment  Input Text  answer2  test
+    Comment  Click Image  css=div.submit.submitBtn
+    Page Should Contain Image  content/default/images/promotions/home/WineCAHome.jpg  Display wine and dine
+    Page Should Contain Image  content/default/images/promotions/home/TravelCAHome.jpg  Display Travel
+    Page Should Contain Image  content/default/images/promotions/home/ShoppingCAHome.jpg  Display Shopping
+    Page Should Contain Image  content/default/images/promotions/home/SportsCAHome.jpg  Dispayed Sport
+    Page Should Contain  wine & dine
+    Page Should Contain  spa
+    Page Should Contain  travel & hotel
+    Page Should Contain  sports & entertainment
+    Click Link  My profile
+    Click Link  Shipping
+    Page Should Contain  Shipping Information
+
+View Activities & Interests Page
+    [Tags]  Profile  Prod
+    Set Selenium Timeout  300
+    Open Browser  ${LOGIN URL}  ${BROWSER}
+    Maximize Browser Window
+    Click Link  VisaLogin.do?program=visacanada
+    Title Should Be  Visa Infinite Concierge -
+    Input Text  userId  ${LoginUser}
+    Input Text  password  ${LoginPassword}
+    Click Image  css=div.submitBtn
+    Comment  Input Text  answer1  test
+    Comment  Input Text  answer2  test
+    Comment  Click Image  css=div.submit.submitBtn
+    Page Should Contain Image  content/default/images/promotions/home/WineCAHome.jpg  Display wine and dine
+    Page Should Contain Image  content/default/images/promotions/home/TravelCAHome.jpg  Display Travel
+    Page Should Contain Image  content/default/images/promotions/home/ShoppingCAHome.jpg  Display Shopping
+    Page Should Contain Image  content/default/images/promotions/home/SportsCAHome.jpg  Dispayed Sport
+    Page Should Contain  wine & dine
+    Page Should Contain  spa
+    Page Should Contain  travel & hotel
+    Page Should Contain  sports & entertainment
+    Click Link  My profile
+    Click Link  Activities and Interests
+    Page Should Contain  Activities
+    Page Should Contain  Dining Preferences
+    Page Should Contain  Music Preferences
+    Page Should Contain  Sports Preferences
+
+View Travel Page
+    [Tags]  Profile  Prod
+    Set Selenium Timeout  300
+    Open Browser  ${LOGIN URL}  ${BROWSER}
+    Maximize Browser Window
+    Click Link  VisaLogin.do?program=visacanada
+    Title Should Be  Visa Infinite Concierge -
+    Input Text  userId  ${LoginUser}
+    Input Text  password  ${LoginPassword}
+    Click Image  css=div.submitBtn
+    Comment  Input Text  answer1  test
+    Comment  Input Text  answer2  test
+    Comment  Click Image  css=div.submit.submitBtn
+    Page Should Contain Image  content/default/images/promotions/home/WineCAHome.jpg  Display wine and dine
+    Page Should Contain Image  content/default/images/promotions/home/TravelCAHome.jpg  Display Travel
+    Page Should Contain Image  content/default/images/promotions/home/ShoppingCAHome.jpg  Display Shopping
+    Page Should Contain Image  content/default/images/promotions/home/SportsCAHome.jpg  Dispayed Sport
+    Page Should Contain  wine & dine
+    Page Should Contain  spa
+    Page Should Contain  travel & hotel
+    Page Should Contain  sports & entertainment
+    Click Link  My profile
+    Click Link  Travel
+    Page Should Contain  Travel Information
+    Page Should Contain  Passport Information
+    Page Should Contain  Airline, Car Rental and Cruise Reward Programs
+
+View History Page
+    [Tags]  Profile  Prod
+    Set Selenium Timeout  300
+    Open Browser  ${LOGIN URL}  ${BROWSER}
+    Maximize Browser Window
+    Click Link  VisaLogin.do?program=visacanada
+    Title Should Be  Visa Infinite Concierge -
+    Input Text  userId  ${LoginUser}
+    Input Text  password  ${LoginPassword}
+    Click Image  css=div.submitBtn
+    Comment  Input Text  answer1  test
+    Comment  Input Text  answer2  test
+    Comment  Click Image  css=div.submit.submitBtn
+    Page Should Contain Image  content/default/images/promotions/home/WineCAHome.jpg  Display wine and dine
+    Page Should Contain Image  content/default/images/promotions/home/TravelCAHome.jpg  Display Travel
+    Page Should Contain Image  content/default/images/promotions/home/ShoppingCAHome.jpg  Display Shopping
+    Page Should Contain Image  content/default/images/promotions/home/SportsCAHome.jpg  Dispayed Sport
+    Page Should Contain  wine & dine
+    Page Should Contain  spa
+    Page Should Contain  travel & hotel
+    Page Should Contain  sports & entertainment
+    Click Link  My profile
+    Click Link  History
+    Page Should Contain  REQUEST #
+    Page Should Contain  DATE
+    Page Should Contain  REQUEST TYPE
+    Page Should Contain  STATUS
+
+Update Contacts Page
+    [Tags]  Profile  Prod1
+    Set Selenium Timeout  300
+    Open Browser  ${LOGIN URL}  ${BROWSER}
+    Maximize Browser Window
+    Click Link  VisaLogin.do?program=visacanada
+    Title Should Be  Visa Infinite Concierge -
+    Input Text  userId  ${LoginUser}
+    Input Text  password  ${LoginPassword}
+    Click Image  css=div.submitBtn
+    Comment  Input Text  answer1  test
+    Comment  Input Text  answer2  test
+    Comment  Click Image  css=div.submit.submitBtn
+    Page Should Contain Image  content/default/images/promotions/home/WineCAHome.jpg  Display wine and dine
+    Page Should Contain Image  content/default/images/promotions/home/TravelCAHome.jpg  Display Travel
+    Page Should Contain Image  content/default/images/promotions/home/ShoppingCAHome.jpg  Display Shopping
+    Page Should Contain Image  content/default/images/promotions/home/SportsCAHome.jpg  Dispayed Sport
+    Page Should Contain  wine & dine
+    Page Should Contain  spa
+    Page Should Contain  travel & hotel
+    Page Should Contain  sports & entertainment
+    Click Link  My profile
+    Click Link  Contact
+    Page Should Contain  Contact Information
+    Page Should Contain  Communication Preferences
+    Click Image  css=strong.formButtonForegroundColor
+    Page Should Contain  Thank you. We have successfully updated your Contact Information.
+
+Update Personal/Family Page
+    [Tags]  Profile  Prod1
+    Set Selenium Timeout  300
+    Open Browser  ${LOGIN URL}  ${BROWSER}
+    Maximize Browser Window
+    Click Link  VisaLogin.do?program=visacanada
+    Title Should Be  Visa Infinite Concierge -
+    Input Text  userId  ${LoginUser}
+    Input Text  password  ${LoginPassword}
+    Click Image  css=div.submitBtn
+    Comment  Input Text  answer1  test
+    Comment  Input Text  answer2  test
+    Comment  Click Image  css=div.submit.submitBtn
+    Page Should Contain Image  content/default/images/promotions/home/WineCAHome.jpg  Display wine and dine
+    Page Should Contain Image  content/default/images/promotions/home/TravelCAHome.jpg  Display Travel
+    Page Should Contain Image  content/default/images/promotions/home/ShoppingCAHome.jpg  Display Shopping
+    Page Should Contain Image  content/default/images/promotions/home/SportsCAHome.jpg  Dispayed Sport
+    Page Should Contain  wine & dine
+    Page Should Contain  spa
+    Page Should Contain  travel & hotel
+    Page Should Contain  sports & entertainment
+    Click Link  My profile
+    Click Link  Personal and Family
+    Page Should Contain  Personal and Family Information
+    Click Image  css=strong.formButtonForegroundColor
+    Page Should Contain  Thank you. We have successfully updated your Personal & Family Information.
+
+Update View Billing Page
+    [Tags]  Profile  Prod1
+    Set Selenium Timeout  300
+    Open Browser  ${LOGIN URL}  ${BROWSER}
+    Maximize Browser Window
+    Click Link  VisaLogin.do?program=visacanada
+    Title Should Be  Visa Infinite Concierge -
+    Input Text  userId  ${LoginUser}
+    Input Text  password  ${LoginPassword}
+    Click Image  css=div.submitBtn
+    Comment  Input Text  answer1  test
+    Comment  Input Text  answer2  test
+    Comment  Click Image  css=div.submit.submitBtn
+    Page Should Contain Image  content/default/images/promotions/home/WineCAHome.jpg  Display wine and dine
+    Page Should Contain Image  content/default/images/promotions/home/TravelCAHome.jpg  Display Travel
+    Page Should Contain Image  content/default/images/promotions/home/ShoppingCAHome.jpg  Display Shopping
+    Page Should Contain Image  content/default/images/promotions/home/SportsCAHome.jpg  Dispayed Sport
+    Page Should Contain  wine & dine
+    Page Should Contain  spa
+    Page Should Contain  travel & hotel
+    Page Should Contain  sports & entertainment
+    Click Link  My profile
+    Click Link  Billing
+    Page Should Contain  Billing Information
+    Click Image  css=strong.formButtonForegroundColor
+    Page Should Contain  Thank you. We have successfully updated your Billing Information.
+
+Update Shipping Page
+    [Tags]  Profile  Prod1  tofix
+    Set Selenium Timeout  300
+    Open Browser  ${LOGIN URL}  ${BROWSER}
+    Maximize Browser Window
+    Click Link  VisaLogin.do?program=visacanada
+    Title Should Be  Visa Infinite Concierge -
+    Input Text  userId  ${LoginUser}
+    Input Text  password  ${LoginPassword}
+    Click Image  css=div.submitBtn
+    Comment  Input Text  answer1  test
+    Comment  Input Text  answer2  test
+    Comment  Click Image  css=div.submit.submitBtn
+    Page Should Contain Image  content/default/images/promotions/home/WineCAHome.jpg  Display wine and dine
+    Page Should Contain Image  content/default/images/promotions/home/TravelCAHome.jpg  Display Travel
+    Page Should Contain Image  content/default/images/promotions/home/ShoppingCAHome.jpg  Display Shopping
+    Page Should Contain Image  content/default/images/promotions/home/SportsCAHome.jpg  Dispayed Sport
+    Page Should Contain  wine & dine
+    Page Should Contain  spa
+    Page Should Contain  travel & hotel
+    Page Should Contain  sports & entertainment
+    Click Link  My profile
+    Click Link  Shipping
+    Page Should Contain  Shipping Information
+    Select From List  fields[1].value  My Test
+    Sleep  15 seconds
+    Input Text  fields[5].value  An Test
+    Input Text  fields[7].value  Sample
+    Input Text  fields[13].value  Sample
+    Select From List  fields[15].value  Alberta
+    Input Text  fields[18].value  C3EG3R
+    Select From List  fields[20].value  Canada
+    Select From List  fields[26].value  Work
+    Sleep  15 seconds
+    Select From List  fields[29].value  Canada
+    Input Text  fields[30].value  417
+    Input Text  fields[31].value  999-9999
+    Input Text  fields[35].value  My Test
+    Click Image  css=td.formButtonBackgroundColor
+    Page Should Contain  Thank you. We have successfully updated your Shipping Information.
+
+Update Activities & Interests Page
+    [Tags]  Profile  Prod1
+    Set Selenium Timeout  300
+    Open Browser  ${LOGIN URL}  ${BROWSER}
+    Maximize Browser Window
+    Click Link  VisaLogin.do?program=visacanada
+    Title Should Be  Visa Infinite Concierge -
+    Input Text  userId  ${LoginUser}
+    Input Text  password  ${LoginPassword}
+    Click Image  css=div.submitBtn
+    Comment  Input Text  answer1  test
+    Comment  Input Text  answer2  test
+    Comment  Click Image  css=div.submit.submitBtn
+    Page Should Contain Image  content/default/images/promotions/home/WineCAHome.jpg  Display wine and dine
+    Page Should Contain Image  content/default/images/promotions/home/TravelCAHome.jpg  Display Travel
+    Page Should Contain Image  content/default/images/promotions/home/ShoppingCAHome.jpg  Display Shopping
+    Page Should Contain Image  content/default/images/promotions/home/SportsCAHome.jpg  Dispayed Sport
+    Page Should Contain  wine & dine
+    Page Should Contain  spa
+    Page Should Contain  travel & hotel
+    Page Should Contain  sports & entertainment
+    Click Link  My profile
+    Click Link  Activities and Interests
+    Page Should Contain  Activities
+    Page Should Contain  Dining Preferences
+    Page Should Contain  Music Preferences
+    Page Should Contain  Sports Preferences
+    Click Image  css=strong.formButtonForegroundColor
+    Page Should Contain  Thank you. We have successfully updated your Activities & Interest Information.
+
+Update Travel Page
+    [Tags]  Profile  Prod1
+    Set Selenium Timeout  300
+    Open Browser  ${LOGIN URL}  ${BROWSER}
+    Maximize Browser Window
+    Click Link  VisaLogin.do?program=visacanada
+    Title Should Be  Visa Infinite Concierge -
+    Input Text  userId  ${LoginUser}
+    Input Text  password  ${LoginPassword}
+    Click Image  css=div.submitBtn
+    Comment  Input Text  answer1  test
+    Comment  Input Text  answer2  test
+    Comment  Click Image  css=div.submit.submitBtn
+    Page Should Contain Image  content/default/images/promotions/home/WineCAHome.jpg  Display wine and dine
+    Page Should Contain Image  content/default/images/promotions/home/TravelCAHome.jpg  Display Travel
+    Page Should Contain Image  content/default/images/promotions/home/ShoppingCAHome.jpg  Display Shopping
+    Page Should Contain Image  content/default/images/promotions/home/SportsCAHome.jpg  Dispayed Sport
+    Page Should Contain  wine & dine
+    Page Should Contain  spa
+    Page Should Contain  travel & hotel
+    Page Should Contain  sports & entertainment
+    Click Link  My profile
+    Click Link  Travel
+    Page Should Contain  Travel Information
+    Page Should Contain  Passport Information
+    Page Should Contain  Airline, Car Rental and Cruise Reward Programs
+    Click Image  css=strong.formButtonForegroundColor
+    Page Should Contain  Thank you. We have successfully updated your Travel Information.
+
+Update from Profile Summary Page (Contact Info, billing, shipping)
+    [Tags]  Profile  Prod1  tofix
+    Set Selenium Timeout  300
+    Open Browser  ${LOGIN URL}  ${BROWSER}
+    Maximize Browser Window
+    Click Link  VisaLogin.do?program=visacanada
+    Title Should Be  Visa Infinite Concierge -
+    Input Text  userId  ${LoginUser}
+    Input Text  password  ${LoginPassword}
+    Click Image  css=div.submitBtn
+    Comment  Input Text  answer1  test
+    Comment  Input Text  answer2  test
+    Comment  Click Image  css=div.submit.submitBtn
+    Page Should Contain Image  content/default/images/promotions/home/WineCAHome.jpg  Display wine and dine
+    Page Should Contain Image  content/default/images/promotions/home/TravelCAHome.jpg  Display Travel
+    Page Should Contain Image  content/default/images/promotions/home/ShoppingCAHome.jpg  Display Shopping
+    Page Should Contain Image  content/default/images/promotions/home/SportsCAHome.jpg  Dispayed Sport
+    Page Should Contain  wine & dine
+    Page Should Contain  spa
+    Page Should Contain  travel & hotel
+    Page Should Contain  sports & entertainment
+    Click Link  My profile
+    Click Link  Summary
+    Page Should Contain  Contact Information
+    Page Should Contain  Recent Requests
+    Page Should Contain  Billing Information
+    Page Should Contain  Shipping Address
+    Page Should Contain  Opting Out of Your Profile
+    Click Image  css=strong.formButtonForegroundColor
+    Page Should Contain  Contact Information
+    Page Should Contain  Communication Preferences
+    Click Image  css=strong.formButtonForegroundColor
+    Page Should Contain  Thank you. We have successfully updated your Contact Information.
+    Go Back
+    Go Back
+    Click Image  css=a.center_text > b
+    Page Should Contain  Billing Information
+    Click Image  css=strong.formButtonForegroundColor
+    Page Should Contain  Thank you. We have successfully updated your Billing Information.
+    Go Back
+    Go Back
+    Click Element  //table[4]/tbody/tr[4]/td[5]/a/b
+    Page Should Contain  Shipping Information
+    Click Image  css=strong.formButtonForegroundColor
+    Page Should Contain  Thank you. We have successfully updated your Shipping Information.
+
+Delete Shipping Address
+    [Tags]  Profile  Prod1  tofix
+    Set Selenium Timeout  300
+    Open Browser  ${LOGIN URL}  ${BROWSER}
+    Maximize Browser Window
+    Click Link  VisaLogin.do?program=visacanada
+    Title Should Be  Visa Infinite Concierge -
+    Input Text  userId  ${LoginUser}
+    Input Text  password  ${LoginPassword}
+    Click Image  css=div.submitBtn
+    Comment  Input Text  answer1  test
+    Comment  Input Text  answer2  test
+    Comment  Click Image  css=div.submit.submitBtn
+    Page Should Contain Image  content/default/images/promotions/home/WineCAHome.jpg  Display wine and dine
+    Page Should Contain Image  content/default/images/promotions/home/TravelCAHome.jpg  Display Travel
+    Page Should Contain Image  content/default/images/promotions/home/ShoppingCAHome.jpg  Display Shopping
+    Page Should Contain Image  content/default/images/promotions/home/SportsCAHome.jpg  Dispayed Sport
+    Page Should Contain  wine & dine
+    Page Should Contain  spa
+    Page Should Contain  travel & hotel
+    Page Should Contain  sports & entertainment
+    Click Link  My profile
+    Click Link  Summary
+    Page Should Contain  Contact Information
+    Page Should Contain  Recent Requests
+    Page Should Contain  Billing Information
+    Page Should Contain  Shipping Address
+    Page Should Contain  Opting Out of Your Profile
+    Click Element  //tr[7]/td/span/table/tbody/tr/td/table/tbody/tr/td/strong
+    Page Should Contain  Shipping Information
+    Select From List  fields[1].value  Please Choose
+    Sleep  5 seconds
+    Page Should Contain  Shipping Information
+    Input Text  fields[5].value  A Test
+    Input Text  fields[7].value  Test
+    Input Text  fields[13].value  Test
+    Select From List  fields[15].value  Alberta
+    Input Text  fields[18].value  s3ww3r
+    Input Text  fields[30].value  890
+    Input Text  fields[31].value  7897878
+    Input Text  fields[35].value  A Test
+    Click Image  css=strong.formButtonForegroundColor
+    Page Should Contain  Thank you. We have successfully updated your Shipping Information.
+    Click Link  Summary
+    Page Should Contain  A Test
+    Click Link  [delete]
+    Sleep  10 seconds
+    Page Should Not Contain  A Test
+

@@ -1,0 +1,1835 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="RIDE" /> 
+<meta name="rf-template" content="False" /> 
+<style type="text/css">
+html {
+  font-family: Arial,Helvetica,sans-serif;
+  background-color: white;
+  color: black;
+}
+table {
+  border-collapse: collapse;
+  empty-cells: show;
+  margin: 1em 0em;
+  border: 1px solid black;
+}
+th, td {
+  border: 1px solid black;
+  padding: 0.1em 0.2em;
+  height: 1.5em;
+  width: 12em;
+}
+th {
+  background-color: rgb(192, 192, 192);
+  color: black;
+  height: 1.7em;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 0.1em;
+}
+td.name {
+  background-color: rgb(240, 240, 240);
+  letter-spacing: 0.1em;
+}
+td.name, th.name {
+  width: 10em;
+}
+</style>
+<title>Checkpoint Resource</title>
+</head>
+<body>
+<h1>Checkpoint Resource</h1>
+<table id="settings" border="1">
+<tr>
+<th class="name">Setting</th>
+<th colspan="4">Value</th>
+</tr>
+<tr>
+<td class="name">Library</td>
+<td>SeleniumLibrary</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name">Library</td>
+<td>BuiltIn</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name">Resource</td>
+<td>//FILE-AP1-01/USERDATA1$/CHRIS404/Desktop/efficio/OpenSource/RobotWS/ResourceNew/Configuration.html</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table>
+<table id="variables" border="1"></table>
+<table id="testcases" border="1"></table>
+<table id="keywords" border="1">
+<tr>
+<th class="name">Keyword</th>
+<th>Action</th>
+<th colspan="3">Arguments</th>
+</tr>
+<tr>
+<td class="name"><a name="keyword_CP_Checkbox Should Be Selected">CP_Checkbox Should Be Selected</a></td>
+<td>[Arguments]</td>
+<td>${ObjFieldName}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>[Documentation]</td>
+<td colspan="3">Verifies checkbox identified by locator is selected/checked.\n</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${retValue} =</td>
+<td>Get Object</td>
+<td>${ObjFieldName}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Checkbox Should Be Selected</td>
+<td>${retValue[1+1]}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"><a name="keyword_CP_Checkbox Should Not Be Selected">CP_Checkbox Should Not Be Selected</a></td>
+<td>[Arguments]</td>
+<td>${ObjFieldName}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>[Documentation]</td>
+<td colspan="3">Verifies checkbox identified by locator is not selected/checked.\n</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${retValue} =</td>
+<td>Get Object</td>
+<td>${ObjFieldName}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Checkbox Should Not Be Selected</td>
+<td>${retValue[1]}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"><a name="keyword_CP_Current Frame Contains">CP_Current Frame Contains</a></td>
+<td>[Arguments]</td>
+<td>${DataKeyField}</td>
+<td>${colName}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>[Documentation]</td>
+<td colspan="3">Verifies that current page contains text.\n</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${retResult} =</td>
+<td>Get Data</td>
+<td>${DataKeyField}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${index}=</td>
+<td>Get Col Index</td>
+<td>${TEST DATA PATH}</td>
+<td>Data Library</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>...</td>
+<td>${colName}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Current Frame Contains</td>
+<td>${retResult[${index}]}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"><a name="keyword_CP_Current Frame Should Contain">CP_Current Frame Should Contain</a></td>
+<td>[Arguments]</td>
+<td>${DataKeyField}</td>
+<td>${colName}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>[Documentation]</td>
+<td colspan="3">Verifies that current page contains text.\n</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${retResult} =</td>
+<td>Get Data</td>
+<td>${DataKeyField}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${index}=</td>
+<td>Get Col Index</td>
+<td>${TEST DATA PATH}</td>
+<td>Data Library</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>...</td>
+<td>${colName}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Current Frame Should Contain</td>
+<td>${retResult[${index}]}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"><a name="keyword_CP_Element Should Contain">CP_Element Should Contain</a></td>
+<td>[Arguments]</td>
+<td>${ObjFieldName}</td>
+<td>${DataKeyField}</td>
+<td>${colName}</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>[Documentation]</td>
+<td colspan="3">Verifies element identified by locator contains text expected.\n</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${retValue} =</td>
+<td>Get Object</td>
+<td>${ObjFieldName}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${retResult} =</td>
+<td>Get Data</td>
+<td>${DataKeyField}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${index}=</td>
+<td>Get Col Index</td>
+<td>${TEST DATA PATH}</td>
+<td>Data Library</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>...</td>
+<td>${colName}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Element Should Contain</td>
+<td>${retValue[1]}</td>
+<td>${retResult[${index}]}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"><a name="keyword_CP_Frame Should Contain">CP_Frame Should Contain</a></td>
+<td>[Arguments]</td>
+<td>${ObjFieldName}</td>
+<td>${DataKeyField}</td>
+<td>${colName}</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>[Documentation]</td>
+<td colspan="3">Verifies frame identified by locator contains text.\n</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${retValue} =</td>
+<td>Get Object</td>
+<td>${ObjFieldName}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${retResult} =</td>
+<td>Get Data</td>
+<td>${DataKeyField}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${index}=</td>
+<td>Get Col Index</td>
+<td>${TEST DATA PATH}</td>
+<td>Data Library</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>...</td>
+<td>${colName}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Frame Should Contain</td>
+<td>${retValue[1]}</td>
+<td>${retResult[${index}]}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"><a name="keyword_CP_Frame Should Contain Text">CP_Frame Should Contain Text</a></td>
+<td>[Arguments]</td>
+<td>${ObjFieldName}</td>
+<td>${DataKeyField}</td>
+<td>${colName}</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>[Documentation]</td>
+<td colspan="3">Verifies frame identified by locator contains text.\n</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${retValue} =</td>
+<td>Get Object</td>
+<td>${ObjFieldName}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${retResult} =</td>
+<td>Get Data</td>
+<td>${DataKeyField}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${index}=</td>
+<td>Get Col Index</td>
+<td>${TEST DATA PATH}</td>
+<td>Data Library</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>...</td>
+<td>${colName}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Frame Should Contain Text</td>
+<td>${retValue[1]}</td>
+<td>${retResult[${index}]}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"><a name="keyword_CP_List Selection Should Be">CP_List Selection Should Be</a></td>
+<td>[Arguments]</td>
+<td>${ObjFieldName}</td>
+<td>${DataKeyField}</td>
+<td>${colName}</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>[Documentation]</td>
+<td colspan="3">Verifies the selection of list identified by locator is exactly *values.\n</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${retValue} =</td>
+<td>Get Object</td>
+<td>${ObjFieldName}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${retResult} =</td>
+<td>Get Data</td>
+<td>${DataKeyField}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${index}=</td>
+<td>Get Col Index</td>
+<td>${TEST DATA PATH}</td>
+<td>Data Library</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>...</td>
+<td>${colName}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>List Selection Should Be</td>
+<td>${retValue[1]}</td>
+<td>${retResult[${index}]}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"><a name="keyword_CP_List Should Have No Selections">CP_List Should Have No Selections</a></td>
+<td>[Arguments]</td>
+<td>${ObjFieldName}</td>
+<td>${DataKeyField}</td>
+<td>${colName}</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>[Documentation]</td>
+<td colspan="3">Verifies list idenetified by locator has no selections.\n</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${retValue} =</td>
+<td>Get Object</td>
+<td>${ObjFieldName}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${retResult} =</td>
+<td>Get Data</td>
+<td>${DataKeyField}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${index}=</td>
+<td>Get Col Index</td>
+<td>${TEST DATA PATH}</td>
+<td>Data Library</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>...</td>
+<td>${colName}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>List Should Have No Selections</td>
+<td>${retValue[1]}</td>
+<td>${retResult[${index}]}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"><a name="keyword_CP_Location Should Be">CP_Location Should Be</a></td>
+<td>[Arguments]</td>
+<td>${DataKeyField}</td>
+<td>${colName}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>[Documentation]</td>
+<td colspan="3">Verifies that current URL is exactly url.\n</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${retResult} =</td>
+<td>Get Data</td>
+<td>${DataKeyField}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${index}=</td>
+<td>Get Col Index</td>
+<td>${TEST DATA PATH}</td>
+<td>Data Library</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>...</td>
+<td>${colName}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Location Should Be</td>
+<td>${retResult[${index}]}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"><a name="keyword_CP_Location Should Contain">CP_Location Should Contain</a></td>
+<td>[Arguments]</td>
+<td>${DataKeyField}</td>
+<td>${colName}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>[Documentation]</td>
+<td colspan="3">Verifies that current URL contains expected.\n</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${retResult} =</td>
+<td>Get Data</td>
+<td>${DataKeyField}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${index}=</td>
+<td>Get Col Index</td>
+<td>${TEST DATA PATH}</td>
+<td>Data Library</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>...</td>
+<td>${colName}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Location Should Contain</td>
+<td>${retResult[${index}]}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"><a name="keyword_CP_Page Should Contain">CP_Page Should Contain</a></td>
+<td>[Arguments]</td>
+<td>${DataKeyField}</td>
+<td>${colName}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>[Documentation]</td>
+<td colspan="3">Verifies that current page contains text.\n</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${retResult} =</td>
+<td>Get Data</td>
+<td>${DataKeyField}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${index}=</td>
+<td>Get Col Index</td>
+<td>${TEST DATA PATH}</td>
+<td>Data Library</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>...</td>
+<td>${colName}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Page Should Contain</td>
+<td>${retResult[${index}]}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"><a name="keyword_CP_Page Should Contain Button">CP_Page Should Contain Button</a></td>
+<td>[Arguments]</td>
+<td>${ObjFieldName}</td>
+<td>${DataKeyField}</td>
+<td>${colName}</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>[Documentation]</td>
+<td colspan="3">Verifies button identified by locator is found from current page.\n</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${retValue} =</td>
+<td>Get Object</td>
+<td>${ObjFieldName}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${retResult} =</td>
+<td>Get Data</td>
+<td>${DataKeyField}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${index}=</td>
+<td>Get Col Index</td>
+<td>${TEST DATA PATH}</td>
+<td>Data Library</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>...</td>
+<td>${colName}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Page Should Contain Button</td>
+<td>${retValue[1]}</td>
+<td>${retResult[${index}]}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"><a name="keyword_CP_Page Should Contain Checkbox">CP_Page Should Contain Checkbox</a></td>
+<td>[Arguments]</td>
+<td>${ObjFieldName}</td>
+<td>${DataKeyField}</td>
+<td>${colName}</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>[Documentation]</td>
+<td colspan="3">Verifies checkbox identified by locator is found from current page.\n</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${retValue} =</td>
+<td>Get Object</td>
+<td>${ObjFieldName}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${retResult} =</td>
+<td>Get Data</td>
+<td>${DataKeyField}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${index}=</td>
+<td>Get Col Index</td>
+<td>${TEST DATA PATH}</td>
+<td>Data Library</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>...</td>
+<td>${colName}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Page Should Contain Checkbox</td>
+<td>${retValue[1]}</td>
+<td>${retResult[${index}]}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"><a name="keyword_CP_Page Should Contain Element">CP_Page Should Contain Element</a></td>
+<td>[Arguments]</td>
+<td>${ObjFieldName}</td>
+<td>${DataKeyField}</td>
+<td>${colName}</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>[Documentation]</td>
+<td colspan="3">Verifies element identified by locator is found from current page.\n</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${retValue} =</td>
+<td>Get Object</td>
+<td>${ObjFieldName}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${retResult} =</td>
+<td>Get Data</td>
+<td>${DataKeyField}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${index}=</td>
+<td>Get Col Index</td>
+<td>${TEST DATA PATH}</td>
+<td>Data Library</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>...</td>
+<td>${colName}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Page Should Contain Element</td>
+<td>${retValue[1]}</td>
+<td>${retResult[${index}]}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"><a name="keyword_CP_Page Should Contain Image">CP_Page Should Contain Image</a></td>
+<td>[Arguments]</td>
+<td>${ObjFieldName}</td>
+<td>${DataKeyField}</td>
+<td>${colName}</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>[Documentation]</td>
+<td colspan="3">Verifies image identified by locator is found from current page.\n</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${retValue} =</td>
+<td>Get Object</td>
+<td>${ObjFieldName}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${retResult} =</td>
+<td>Get Data</td>
+<td>${DataKeyField}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${index}=</td>
+<td>Get Col Index</td>
+<td>${TEST DATA PATH}</td>
+<td>Data Library</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>...</td>
+<td>${colName}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Page Should Contain Image</td>
+<td>${retValue[1]}</td>
+<td>${retResult[${index}]}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"><a name="keyword_CP_Page Should Contain Link">CP_Page Should Contain Link</a></td>
+<td>[Arguments]</td>
+<td>${ObjFieldName}</td>
+<td>${DataKeyField}</td>
+<td>${colName}</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>[Documentation]</td>
+<td colspan="3">Verifies link identified by locator is found from current page.\n</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${retValue} =</td>
+<td>Get Object</td>
+<td>${ObjFieldName}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${retResult} =</td>
+<td>Get Data</td>
+<td>${DataKeyField}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${index}=</td>
+<td>Get Col Index</td>
+<td>${TEST DATA PATH}</td>
+<td>Data Library</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>...</td>
+<td>${colName}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Page Should Contain Link</td>
+<td>${retValue[1]}</td>
+<td>${retResult[${index}]}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"><a name="keyword_CP_Page Should Contain List">CP_Page Should Contain List</a></td>
+<td>[Arguments]</td>
+<td>${ObjFieldName}</td>
+<td>${DataKeyField}</td>
+<td>${colName}</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>[Documentation]</td>
+<td colspan="3">Verifies list identified by locator is found from current page.\n</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${retValue} =</td>
+<td>Get Object</td>
+<td>${ObjFieldName}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${retResult} =</td>
+<td>Get Data</td>
+<td>${DataKeyField}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${index}=</td>
+<td>Get Col Index</td>
+<td>${TEST DATA PATH}</td>
+<td>Data Library</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>...</td>
+<td>${colName}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Page Should Contain List</td>
+<td>${retValue[1]}</td>
+<td>${retResult[${index}]}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"><a name="keyword_CP_Page Should Contain Radio Button">CP_Page Should Contain Radio Button</a></td>
+<td>[Arguments]</td>
+<td>${ObjFieldName}</td>
+<td>${DataKeyField}</td>
+<td>${colName}</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>[Documentation]</td>
+<td colspan="3">Verifies radio button identified by locator is found from current page.\n</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${retValue} =</td>
+<td>Get Object</td>
+<td>${ObjFieldName}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${retResult} =</td>
+<td>Get Data</td>
+<td>${DataKeyField}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${index}=</td>
+<td>Get Col Index</td>
+<td>${TEST DATA PATH}</td>
+<td>Data Library</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>...</td>
+<td>${colName}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Page Should Contain Radio Button</td>
+<td>${retValue[1]}</td>
+<td>${retResult[${index}]}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"><a name="keyword_CP_Page Should Contain Textfield">CP_Page Should Contain Textfield</a></td>
+<td>[Arguments]</td>
+<td>${ObjFieldName}</td>
+<td>${DataKeyField}</td>
+<td>${colName}</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>[Documentation]</td>
+<td colspan="3">Verifies text field identified by locator is found from current page.\n</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${retValue} =</td>
+<td>Get Object</td>
+<td>${ObjFieldName}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${retResult} =</td>
+<td>Get Data</td>
+<td>${DataKeyField}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${index}=</td>
+<td>Get Col Index</td>
+<td>${TEST DATA PATH}</td>
+<td>Data Library</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>...</td>
+<td>${colName}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Page Should Contain Textfield</td>
+<td>${retValue[1]}</td>
+<td>${retResult[${index}]}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"><a name="keyword_CP_Page Should Not Contain">CP_Page Should Not Contain</a></td>
+<td>[Arguments]</td>
+<td>${DataKeyField}</td>
+<td>${colName}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>[Documentation]</td>
+<td colspan="3">Verifies the current page does not contain text.\n</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${retResult} =</td>
+<td>Get Data</td>
+<td>${DataKeyField}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${index}=</td>
+<td>Get Col Index</td>
+<td>${TEST DATA PATH}</td>
+<td>Data Library</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>...</td>
+<td>${colName}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Page Should Not Contain</td>
+<td>${retResult[${index}]}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"><a name="keyword_CP_Page Should Not Contain Button">CP_Page Should Not Contain Button</a></td>
+<td>[Arguments]</td>
+<td>${ObjFieldName}</td>
+<td>${DataKeyField}</td>
+<td>${colName}</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>[Documentation]</td>
+<td colspan="3">Verifies button identified by locator is not found from current page.\n</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${retValue} =</td>
+<td>Get Object</td>
+<td>${ObjFieldName}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${retResult} =</td>
+<td>Get Data</td>
+<td>${DataKeyField}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${index}=</td>
+<td>Get Col Index</td>
+<td>${TEST DATA PATH}</td>
+<td>Data Library</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>...</td>
+<td>${colName}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Page Should Not Contain Button</td>
+<td>${retValue[1]}</td>
+<td>${retResult[${index}]}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"><a name="keyword_CP_Page Should Not Contain Checkbox">CP_Page Should Not Contain Checkbox</a></td>
+<td>[Arguments]</td>
+<td>${ObjFieldName}</td>
+<td>${DataKeyField}</td>
+<td>${colName}</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>[Documentation]</td>
+<td colspan="3">Verifies checkbox identified by locator is not found from current page.\n</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${retValue} =</td>
+<td>Get Object</td>
+<td>${ObjFieldName}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${retResult} =</td>
+<td>Get Data</td>
+<td>${DataKeyField}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${index}=</td>
+<td>Get Col Index</td>
+<td>${TEST DATA PATH}</td>
+<td>Data Library</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>...</td>
+<td>${colName}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Page Should Not Contain Checkbox</td>
+<td>${retValue[1]}</td>
+<td>${retResult[${index}]}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"><a name="keyword_CP_Page Should Not Contain Element">CP_Page Should Not Contain Element</a></td>
+<td>[Arguments]</td>
+<td>${ObjFieldName}</td>
+<td>${DataKeyField}</td>
+<td>${colName}</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>[Documentation]</td>
+<td colspan="3">Verifies element identified by locator is not found from current page.\n</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${retValue} =</td>
+<td>Get Object</td>
+<td>${ObjFieldName}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${retResult} =</td>
+<td>Get Data</td>
+<td>${DataKeyField}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${index}=</td>
+<td>Get Col Index</td>
+<td>${TEST DATA PATH}</td>
+<td>Data Library</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>...</td>
+<td>${colName}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Page Should Not Contain Element</td>
+<td>${retValue[1]}</td>
+<td>${retResult[${index}]}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"><a name="keyword_CP_Page Should Not Contain Image">CP_Page Should Not Contain Image</a></td>
+<td>[Arguments]</td>
+<td>${ObjFieldName}</td>
+<td>${DataKeyField}</td>
+<td>${colName}</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>[Documentation]</td>
+<td colspan="3">Verifies image identified by locator is not found from current page.\n</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${retValue} =</td>
+<td>Get Object</td>
+<td>${ObjFieldName}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${retResult} =</td>
+<td>Get Data</td>
+<td>${DataKeyField}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${index}=</td>
+<td>Get Col Index</td>
+<td>${TEST DATA PATH}</td>
+<td>Data Library</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>...</td>
+<td>${colName}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Page Should Not Contain Image</td>
+<td>${retValue[1]}</td>
+<td>${retResult[${index}]}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"><a name="keyword_CP_Page Should Not Contain Link">CP_Page Should Not Contain Link</a></td>
+<td>[Arguments]</td>
+<td>${ObjFieldName}</td>
+<td>${DataKeyField}</td>
+<td>${colName}</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>[Documentation]</td>
+<td colspan="3">Verifies link identified by locator is not found from current page.\n</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${retValue} =</td>
+<td>Get Object</td>
+<td>${ObjFieldName}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${retResult} =</td>
+<td>Get Data</td>
+<td>${DataKeyField}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${index}=</td>
+<td>Get Col Index</td>
+<td>${TEST DATA PATH}</td>
+<td>Data Library</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>...</td>
+<td>${colName}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Page Should Not Contain Link</td>
+<td>${retValue[1]}</td>
+<td>${retResult[${index}]}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"><a name="keyword_CP_Page Should Not Contain List">CP_Page Should Not Contain List</a></td>
+<td>[Arguments]</td>
+<td>${ObjFieldName}</td>
+<td>${DataKeyField}</td>
+<td>${colName}</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>[Documentation]</td>
+<td colspan="3">Verifies list identified by locator is not found from current page.\n</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${retValue} =</td>
+<td>Get Object</td>
+<td>${ObjFieldName}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${retResult} =</td>
+<td>Get Data</td>
+<td>${DataKeyField}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${index}=</td>
+<td>Get Col Index</td>
+<td>${TEST DATA PATH}</td>
+<td>Data Library</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>...</td>
+<td>${colName}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Page Should Not Contain List</td>
+<td>${retValue[1]}</td>
+<td>${retResult[${index}]}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"><a name="keyword_CP_Page Should Not Contain Radio Button">CP_Page Should Not Contain Radio Button</a></td>
+<td>[Arguments]</td>
+<td>${ObjFieldName}</td>
+<td>${DataKeyField}</td>
+<td>${colName}</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>[Documentation]</td>
+<td colspan="3">Verifies radio button identified by locator is not found from current page.\n</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${retValue} =</td>
+<td>Get Object</td>
+<td>${ObjFieldName}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${retResult} =</td>
+<td>Get Data</td>
+<td>${DataKeyField}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${index}=</td>
+<td>Get Col Index</td>
+<td>${TEST DATA PATH}</td>
+<td>Data Library</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>...</td>
+<td>${colName}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Page Should Not Contain Radio Button</td>
+<td>${retValue[1]}</td>
+<td>${retResult[${index}]}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"><a name="keyword_CP_Page Should Not Contain Textfield">CP_Page Should Not Contain Textfield</a></td>
+<td>[Arguments]</td>
+<td>${ObjFieldName}</td>
+<td>${DataKeyField}</td>
+<td>${colName}</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>[Documentation]</td>
+<td colspan="3">Verifies text field identified by locator is not found from current page.\n</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${retValue} =</td>
+<td>Get Object</td>
+<td>${ObjFieldName}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${retResult} =</td>
+<td>Get Data</td>
+<td>${DataKeyField}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${index}=</td>
+<td>Get Col Index</td>
+<td>${TEST DATA PATH}</td>
+<td>Data Library</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>...</td>
+<td>${colName}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Page Should Not Contain Textfield</td>
+<td>${retValue[1]}</td>
+<td>${retResult[${index}]}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"><a name="keyword_CP_Radio Button Should Be Set To">CP_Radio Button Should Be Set To</a></td>
+<td>[Arguments]</td>
+<td>${ObjFieldName}</td>
+<td>${DataKeyField}</td>
+<td>${colName}</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>[Documentation]</td>
+<td colspan="3">Verifies radio button group identified by group_name has its selection set to value.\n</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${retValue} =</td>
+<td>Get Object</td>
+<td>${ObjFieldName}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${retResult} =</td>
+<td>Get Data</td>
+<td>${DataKeyField}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${index}=</td>
+<td>Get Col Index</td>
+<td>${TEST DATA PATH}</td>
+<td>Data Library</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>...</td>
+<td>${colName}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Radio Button Should Be Set To</td>
+<td>${retValue[1]}</td>
+<td>${retResult[${index}]}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"><a name="keyword_CP_Radio Button Should Not Be Selected">CP_Radio Button Should Not Be Selected</a></td>
+<td>[Arguments]</td>
+<td>${ObjFieldName}</td>
+<td>${DataKeyField}</td>
+<td>${colName}</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>[Documentation]</td>
+<td colspan="3">Verifies radio button group identified by group_name has no selection.\n</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${retValue} =</td>
+<td>Get Object</td>
+<td>${ObjFieldName}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${retResult} =</td>
+<td>Get Data</td>
+<td>${DataKeyField}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${index}=</td>
+<td>Get Col Index</td>
+<td>${TEST DATA PATH}</td>
+<td>Data Library</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>...</td>
+<td>${colName}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Radio Button Should Not Be Selected</td>
+<td>${retValue[1]}</td>
+<td>${retResult[${index}]}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"><a name="keyword_CP_Text Field Should Contain">CP_Text Field Should Contain</a></td>
+<td>[Arguments]</td>
+<td>${ObjFieldName}</td>
+<td>${DataKeyField}</td>
+<td>${colName}</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>[Documentation]</td>
+<td colspan="3">Verifies text field identified by locator contains text expected.\n</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${retValue} =</td>
+<td>Get Object</td>
+<td>${ObjFieldName}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${retResult} =</td>
+<td>Get Data</td>
+<td>${DataKeyField}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${index}=</td>
+<td>Get Col Index</td>
+<td>${TEST DATA PATH}</td>
+<td>Data Library</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>...</td>
+<td>${colName}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Text Field Should Contain</td>
+<td>${retValue[1]}</td>
+<td>${retResult[${index}]}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"><a name="keyword_CP_Textfield Value Should Be">CP_Textfield Value Should Be</a></td>
+<td>[Arguments]</td>
+<td>${ObjFieldName}</td>
+<td>${DataKeyField}</td>
+<td>${colName}</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>[Documentation]</td>
+<td colspan="3">Verifies text field identified by locator contains text expected.\n</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${retValue} =</td>
+<td>Get Object</td>
+<td>${ObjFieldName}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${retResult} =</td>
+<td>Get Data</td>
+<td>${DataKeyField}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${index}=</td>
+<td>Get Col Index</td>
+<td>${TEST DATA PATH}</td>
+<td>Data Library</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>...</td>
+<td>${colName}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Textfield Value Should Be</td>
+<td>${retValue[1]}</td>
+<td>${retResult[${index}]}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"><a name="keyword_CP_Title Should Be">CP_Title Should Be</a></td>
+<td>[Arguments]</td>
+<td>${DataKeyField}</td>
+<td>${colName}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>[Documentation]</td>
+<td colspan="3">Verifies that current page title equals title.\n</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${retResult} =</td>
+<td>Get Data</td>
+<td>${DataKeyField}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${index}=</td>
+<td>Get Col Index</td>
+<td>${TEST DATA PATH}</td>
+<td>Data Library</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>...</td>
+<td>${colName}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Title Should Be</td>
+<td>${retResult[${index}]}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table>
+</body>
+</html>

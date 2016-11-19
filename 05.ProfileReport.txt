@@ -1,0 +1,687 @@
+*** Settings ***
+Resource        ResourceNew/checkpoint_resource.html
+Library         SeleniumLibrary
+Resource        ResourceNew/object_resource.html
+Resource        ResourceNew/configuration.html
+
+*** Test Cases ***
+Able to view added Contact Information
+    [Tags]  ProfileRep
+    Set Selenium Timeout  300
+    Open Browser  ${LOGIN URL}  ${BROWSER}
+    Maximize Browser Window
+    Click Link  VisaLogin.do?program=visacanada
+    Title Should Be  Visa Infinite Concierge -
+    Input Text  userId  ${LoginUser}
+    Input Text  password  ${LoginPassword}
+    Click Image  css=div.submitBtn
+    Comment  Input Text  answer1  test
+    Comment  Input Text  answer2  test
+    Comment  Click Image  css=div.submit.submitBtn
+    Page Should Contain Image  content/default/images/promotions/home/WineCAHome.jpg  Display wine and dine
+    Page Should Contain Image  content/default/images/promotions/home/TravelCAHome.jpg  Display Travel
+    Page Should Contain Image  content/default/images/promotions/home/ShoppingCAHome.jpg  Display Shopping
+    Page Should Contain Image  content/default/images/promotions/home/SportsCAHome.jpg  Dispayed Sport
+    Page Should Contain  wine & dine
+    Page Should Contain  spa
+    Page Should Contain  travel & hotel
+    Page Should Contain  sports & entertainment
+    Click Link  My profile
+    Click Link  Contact
+    Page Should Contain  Contact Information
+    Page Should Contain  Communication Preferences
+    List Selection Should Be  fields[2].value  Mr.
+    Textfield Value Should Be  fields[3].value  Cris
+    Textfield Value Should Be  fields[4].value  G
+    Textfield Value Should Be  fields[5].value  Manuel
+    Textfield Value Should Be  fields[6].value  Sr
+    List Selection Should Be  fields[9].value  Canada
+    Textfield Value Should Be  fields[10].value  789
+    Textfield Value Should Be  fields[11].value  8909090
+    List Selection Should Be  fields[14].value  Canada
+    Textfield Value Should Be  fields[15].value  890
+    Textfield Value Should Be  fields[16].value  9809090
+    List Selection Should Be  fields[20].value  Canada
+    Textfield Value Should Be  fields[21].value  417
+    Textfield Value Should Be  fields[22].value  888-1234
+    Textfield Value Should Be  fields[24].value  cris.tope.louie@gmail.com
+    Textfield Value Should Be  fields[26].value  cris.tope.louie@gmail.com
+
+Able to view modified Contact Information
+    [Tags]  ProfileRep  Prod1
+    Set Selenium Timeout  300
+    Open Browser  ${LOGIN URL}  ${BROWSER}
+    Maximize Browser Window
+    Click Link  VisaLogin.do?program=visacanada
+    Title Should Be  Visa Infinite Concierge -
+    Input Text  userId  ${LoginUser}
+    Input Text  password  ${LoginPassword}
+    Click Image  css=div.submitBtn
+    Comment  Input Text  answer1  test
+    Comment  Input Text  answer2  test
+    Comment  Click Image  css=div.submit.submitBtn
+    Page Should Contain Image  content/default/images/promotions/home/WineCAHome.jpg  Display wine and dine
+    Page Should Contain Image  content/default/images/promotions/home/TravelCAHome.jpg  Display Travel
+    Page Should Contain Image  content/default/images/promotions/home/ShoppingCAHome.jpg  Display Shopping
+    Page Should Contain Image  content/default/images/promotions/home/SportsCAHome.jpg  Dispayed Sport
+    Page Should Contain  wine & dine
+    Page Should Contain  spa
+    Page Should Contain  travel & hotel
+    Page Should Contain  sports & entertainment
+    Click Link  My profile
+    Click Link  Contact
+    Page Should Contain  Contact Information
+    Page Should Contain  Communication Preferences
+    Select From List  fields[2].value  Mr.
+    Input Text  fields[3].value  Cris
+    Input Text  fields[4].value  G
+    Input Text  fields[5].value  Manuel
+    Input Text  fields[6].value  Jr
+    Select From List  fields[9].value  United States
+    Input Text  fields[10].value  548
+    Input Text  fields[11].value  2933740
+    Select From List  fields[14].value  Canada
+    Input Text  fields[15].value  417
+    Input Text  fields[16].value  999-9999
+    Select From List  fields[20].value  Canada
+    Input Text  fields[21].value  417
+    Input Text  fields[22].value  443-0759
+    Input Text  fields[24].value  cmanuel@efficio.us.com
+    Input Text  fields[26].value  cmanuel@efficio.us.com
+    Click Image  css=td.formButtonBackgroundColor
+    List Selection Should Be  fields[2].value  Mr.
+    Textfield Value Should Be  fields[3].value  Cris
+    Textfield Value Should Be  fields[4].value  G
+    Textfield Value Should Be  fields[5].value  Manuel
+    Textfield Value Should Be  fields[6].value  Jr
+    List Selection Should Be  fields[9].value  United States
+    Textfield Value Should Be  fields[10].value  548
+    Textfield Value Should Be  fields[11].value  2933740
+    List Selection Should Be  fields[14].value  Canada
+    Textfield Value Should Be  fields[15].value  417
+    Textfield Value Should Be  fields[16].value  999-9999
+    List Selection Should Be  fields[20].value  Canada
+    Textfield Value Should Be  fields[21].value  417
+    Textfield Value Should Be  fields[22].value  443-0759
+    Textfield Value Should Be  fields[24].value  cmanuel@efficio.us.com
+    Textfield Value Should Be  fields[26].value  cmanuel@efficio.us.com
+    Select From List  fields[2].value  Mr.
+    Input Text  fields[3].value  Cris
+    Input Text  fields[4].value  G
+    Input Text  fields[5].value  Manuel
+    Input Text  fields[6].value  Sr
+    Select From List  fields[9].value  Canada
+    Input Text  fields[10].value  789
+    Input Text  fields[11].value  8909090
+    Select From List  fields[14].value  Canada
+    Input Text  fields[15].value  890
+    Input Text  fields[16].value  9809090
+    Select From List  fields[20].value  Canada
+    Input Text  fields[21].value  417
+    Input Text  fields[22].value  888-1234
+    Input Text  fields[24].value  cris.tope.louie@gmail.com
+    Input Text  fields[26].value  cris.tope.louie@gmail.com
+    Click Image  css=td.formButtonBackgroundColor
+    Page Should Contain  Thank you. We have successfully updated your Contact Information.
+
+Able to view added Personal/Family Information
+    [Tags]  ProfileRep2
+    Set Selenium Timeout  300
+    Open Browser  ${LOGIN URL}  ${BROWSER}
+    Maximize Browser Window
+    Click Link  VisaLogin.do?program=visacanada
+    Title Should Be  Visa Infinite Concierge -
+    Input Text  userId  ${LoginUser}
+    Input Text  password  ${LoginPassword}
+    Click Image  css=div.submitBtn
+    Comment  Input Text  answer1  test
+    Comment  Input Text  answer2  test
+    Comment  Click Image  css=div.submit.submitBtn
+    Page Should Contain Image  content/default/images/promotions/home/WineCAHome.jpg  Display wine and dine
+    Page Should Contain Image  content/default/images/promotions/home/TravelCAHome.jpg  Display Travel
+    Page Should Contain Image  content/default/images/promotions/home/ShoppingCAHome.jpg  Display Shopping
+    Page Should Contain Image  content/default/images/promotions/home/SportsCAHome.jpg  Dispayed Sport
+    Page Should Contain  wine & dine
+    Page Should Contain  spa
+    Page Should Contain  travel & hotel
+    Page Should Contain  sports & entertainment
+    Click Link  My profile
+    Click Link  Personal and Family
+    Page Should Contain  Personal and Family Information
+    Textfield Value Should Be  fields[5].value  07/14/1978
+    List Selection Should Be  fields[8].value  Male
+    List Selection Should Be  fields[10].value  English
+    List Selection Should Be  fields[13].value  Married
+    List Selection Should Be  fields[19].value  Mrs.
+    Textfield Value Should Be  fields[20].value  Aleli
+    Textfield Value Should Be  fields[21].value  Q
+    Textfield Value Should Be  fields[22].value  Manuel
+    Textfield Value Should Be  fields[23].value  I
+    Textfield Value Should Be  fields[26].value  10/21/1980
+    List Selection Should Be  fields[29].value  06
+    List Selection Should Be  fields[30].value  26
+    Select From List  fields[36].value  Akina Manuel
+    Sleep  15 seconds
+    List Selection Should Be  fields[36].value  Akina Manuel
+    List Selection Should Be  fields[39].value  Select
+    Textfield Value Should Be  fields[40].value  Akina
+    Textfield Value Should Be  fields[41].value  Q
+    Textfield Value Should Be  fields[42].value  Manuel
+    Textfield Value Should Be  fields[45].value  07/04/2005
+
+Able to view modified Personal/Family \ Information
+    [Tags]  ProfileRep2  Prod1
+    Set Selenium Timeout  300
+    Open Browser  ${LOGIN URL}  ${BROWSER}
+    Maximize Browser Window
+    Click Link  VisaLogin.do?program=visacanada
+    Title Should Be  Visa Infinite Concierge -
+    Input Text  userId  ${LoginUser}
+    Input Text  password  ${LoginPassword}
+    Click Image  css=div.submitBtn
+    Comment  Input Text  answer1  test
+    Comment  Input Text  answer2  test
+    Comment  Click Image  css=div.submit.submitBtn
+    Page Should Contain Image  content/default/images/promotions/home/WineCAHome.jpg  Display wine and dine
+    Page Should Contain Image  content/default/images/promotions/home/TravelCAHome.jpg  Display Travel
+    Page Should Contain Image  content/default/images/promotions/home/ShoppingCAHome.jpg  Display Shopping
+    Page Should Contain Image  content/default/images/promotions/home/SportsCAHome.jpg  Dispayed Sport
+    Page Should Contain  wine & dine
+    Page Should Contain  spa
+    Page Should Contain  travel & hotel
+    Page Should Contain  sports & entertainment
+    Click Link  My profile
+    Click Link  Personal and Family
+    Page Should Contain  Personal and Family Information
+    Input Text  fields[5].value  07/14/1978
+    Select From List  fields[8].value  Female
+    Select From List  fields[10].value  English
+    Select From List  fields[13].value  Married
+    Select From List  fields[19].value  Mrs.
+    Input Text  fields[20].value  Aleli
+    Input Text  fields[21].value  Q
+    Input Text  fields[22].value  Manuel
+    Input Text  fields[23].value  I
+    Input Text  fields[26].value  10/21/1980
+    Select From List  fields[29].value  06
+    Select From List  fields[30].value  26
+    Select From List  fields[36].value  Akina Manuel
+    Sleep  15 seconds
+    Comment  Select From List  fields[36].value  Aki Quinzon
+    Select From List  fields[39].value  Miss
+    Input Text  fields[40].value  Akina
+    Input Text  fields[41].value  Q
+    Input Text  fields[42].value  Manuel
+    Input Text  fields[45].value  07/04/2005
+    Click Image  css=strong.formButtonForegroundColor
+    Textfield Value Should Be  fields[5].value  07/14/1978
+    List Selection Should Be  fields[8].value  Female
+    List Selection Should Be  fields[10].value  English
+    List Selection Should Be  fields[13].value  Married
+    List Selection Should Be  fields[19].value  Mrs.
+    Textfield Value Should Be  fields[20].value  Aleli
+    Textfield Value Should Be  fields[21].value  Q
+    Textfield Value Should Be  fields[22].value  Manuel
+    Textfield Value Should Be  fields[23].value  I
+    Textfield Value Should Be  fields[26].value  10/21/1980
+    List Selection Should Be  fields[29].value  06
+    List Selection Should Be  fields[30].value  26
+    Select From List  fields[36].value  Akina Manuel
+    Sleep  15 seconds
+    List Selection Should Be  fields[36].value  Akina Manuel
+    List Selection Should Be  fields[39].value  Miss
+    Textfield Value Should Be  fields[40].value  Akina
+    Textfield Value Should Be  fields[41].value  Q
+    Textfield Value Should Be  fields[42].value  Manuel
+    Textfield Value Should Be  fields[45].value  07/04/2005
+    Input Text  fields[5].value  07/14/1978
+    Select From List  fields[8].value  Male
+    Select From List  fields[10].value  English
+    Select From List  fields[13].value  Married
+    Select From List  fields[19].value  Mrs.
+    Input Text  fields[20].value  Aleli
+    Input Text  fields[21].value  Q
+    Input Text  fields[22].value  Manuel
+    Input Text  fields[23].value  I
+    Input Text  fields[26].value  10/21/1980
+    Select From List  fields[29].value  06
+    Select From List  fields[30].value  26
+    Select From List  fields[36].value  Akina Manuel
+    Sleep  15 seconds
+    Comment  Select From List  fields[36].value  Akina Quinzon
+    Select From List  fields[39].value  Select
+    Input Text  fields[40].value  Akina
+    Input Text  fields[41].value  Q
+    Input Text  fields[42].value  Manuel
+    Input Text  fields[45].value  07/04/2005
+    Click Image  css=strong.formButtonForegroundColor
+    Page Should Contain  Thank you. We have successfully updated your Personal & Family Information.
+
+Able to view added Billing Information
+    [Tags]  ProfileRep
+    Set Selenium Timeout  300
+    Open Browser  ${LOGIN URL}  ${BROWSER}
+    Maximize Browser Window
+    Click Link  VisaLogin.do?program=visacanada
+    Title Should Be  Visa Infinite Concierge -
+    Input Text  userId  ${LoginUser}
+    Input Text  password  ${LoginPassword}
+    Click Image  css=div.submitBtn
+    Comment  Input Text  answer1  test
+    Comment  Input Text  answer2  test
+    Comment  Click Image  css=div.submit.submitBtn
+    Page Should Contain Image  content/default/images/promotions/home/WineCAHome.jpg  Display wine and dine
+    Page Should Contain Image  content/default/images/promotions/home/TravelCAHome.jpg  Display Travel
+    Page Should Contain Image  content/default/images/promotions/home/ShoppingCAHome.jpg  Display Shopping
+    Page Should Contain Image  content/default/images/promotions/home/SportsCAHome.jpg  Dispayed Sport
+    Page Should Contain  wine & dine
+    Page Should Contain  spa
+    Page Should Contain  travel & hotel
+    Page Should Contain  sports & entertainment
+    Click Link  My profile
+    Click Link  Billing
+    Page Should Contain  Billing Information
+    List Selection Should Be  fields[11].value  08
+    List Selection Should Be  fields[12].value  2012
+    Textfield Value Should Be  fields[17].value  Cris Manuel
+    List Selection Should Be  fields[26].value  Ontario
+    List Selection Should Be  fields[31].value  Canada
+    List Selection Should Be  fields[33].value  Work
+
+Able to view modified Billing Information
+    [Tags]  ProfileRep  Prod1
+    Set Selenium Timeout  300
+    Open Browser  ${LOGIN URL}  ${BROWSER}
+    Maximize Browser Window
+    Click Link  VisaLogin.do?program=visacanada
+    Title Should Be  Visa Infinite Concierge -
+    Input Text  userId  ${LoginUser}
+    Input Text  password  ${LoginPassword}
+    Click Image  css=div.submitBtn
+    Comment  Input Text  answer1  test
+    Comment  Input Text  answer2  test
+    Comment  Click Image  css=div.submit.submitBtn
+    Page Should Contain Image  content/default/images/promotions/home/WineCAHome.jpg  Display wine and dine
+    Page Should Contain Image  content/default/images/promotions/home/TravelCAHome.jpg  Display Travel
+    Page Should Contain Image  content/default/images/promotions/home/ShoppingCAHome.jpg  Display Shopping
+    Page Should Contain Image  content/default/images/promotions/home/SportsCAHome.jpg  Dispayed Sport
+    Page Should Contain  wine & dine
+    Page Should Contain  spa
+    Page Should Contain  travel & hotel
+    Page Should Contain  sports & entertainment
+    Click Link  My profile
+    Click Link  Billing
+    Page Should Contain  Billing Information
+    Select From List  fields[11].value  10
+    Select From List  fields[12].value  2013
+    Input Text  fields[17].value  Cris Manuel
+    Select From List  fields[26].value  Alberta
+    Select From List  fields[31].value  Canada
+    Select From List  fields[33].value  Home
+    Click Image  css=strong.formButtonForegroundColor
+    Page Should Contain  Thank you. We have successfully updated your Billing Information.
+    List Selection Should Be  fields[11].value  10
+    List Selection Should Be  fields[12].value  2013
+    Textfield Value Should Be  fields[17].value  Cris Manuel
+    List Selection Should Be  fields[26].value  Alberta
+    List Selection Should Be  fields[31].value  Canada
+    List Selection Should Be  fields[33].value  Home
+    Select From List  fields[11].value  08
+    Select From List  fields[12].value  2012
+    Input Text  fields[17].value  Cris Manuel
+    Select From List  fields[26].value  Ontario
+    Select From List  fields[31].value  Canada
+    Select From List  fields[33].value  Work
+    Click Image  css=strong.formButtonForegroundColor
+    Page Should Contain  Thank you. We have successfully updated your Billing Information.
+
+Able to view added Shipping Information
+    [Tags]  ProfileRep1
+    Set Selenium Timeout  300
+    Open Browser  ${LOGIN URL}  ${BROWSER}
+    Maximize Browser Window
+    Click Link  VisaLogin.do?program=visacanada
+    Title Should Be  Visa Infinite Concierge -
+    Input Text  userId  ${LoginUser}
+    Input Text  password  ${LoginPassword}
+    Click Image  css=div.submitBtn
+    Comment  Input Text  answer1  test
+    Comment  Input Text  answer2  test
+    Comment  Click Image  css=div.submit.submitBtn
+    Page Should Contain Image  content/default/images/promotions/home/WineCAHome.jpg  Display wine and dine
+    Page Should Contain Image  content/default/images/promotions/home/TravelCAHome.jpg  Display Travel
+    Page Should Contain Image  content/default/images/promotions/home/ShoppingCAHome.jpg  Display Shopping
+    Page Should Contain Image  content/default/images/promotions/home/SportsCAHome.jpg  Dispayed Sport
+    Page Should Contain  wine & dine
+    Page Should Contain  spa
+    Page Should Contain  travel & hotel
+    Page Should Contain  sports & entertainment
+    Click Link  My profile
+    Click Link  Shipping
+    Page Should Contain  Shipping Information
+    Select From List  fields[1].value  My Test
+    Sleep  15 seconds
+    List Selection Should Be  fields[1].value  My Test
+    Textfield Value Should Be  fields[5].value  Sample
+    List Selection Should Be  fields[15].value  Alberta
+    List Selection Should Be  fields[20].value  Canada
+    List Selection Should Be  fields[26].value  Work
+    List Selection Should Be  fields[29].value  Canada
+    Textfield Value Should Be  fields[30].value  417
+    Textfield Value Should Be  fields[31].value  999-9999
+    Textfield Value Should Be  fields[35].value  My Test
+
+Able to view modified Shipping Information
+    [Tags]  ProfileRep  Prod1
+    Set Selenium Timeout  300
+    Open Browser  ${LOGIN URL}  ${BROWSER}
+    Maximize Browser Window
+    Click Link  VisaLogin.do?program=visacanada
+    Title Should Be  Visa Infinite Concierge -
+    Input Text  userId  ${LoginUser}
+    Input Text  password  ${LoginPassword}
+    Click Image  css=div.submitBtn
+    Comment  Input Text  answer1  test
+    Comment  Input Text  answer2  test
+    Comment  Click Image  css=div.submit.submitBtn
+    Page Should Contain Image  content/default/images/promotions/home/WineCAHome.jpg  Display wine and dine
+    Page Should Contain Image  content/default/images/promotions/home/TravelCAHome.jpg  Display Travel
+    Page Should Contain Image  content/default/images/promotions/home/ShoppingCAHome.jpg  Display Shopping
+    Page Should Contain Image  content/default/images/promotions/home/SportsCAHome.jpg  Dispayed Sport
+    Page Should Contain  wine & dine
+    Page Should Contain  spa
+    Page Should Contain  travel & hotel
+    Page Should Contain  sports & entertainment
+    Click Link  My profile
+    Click Link  Shipping
+    Page Should Contain  Shipping Information
+    Select From List  fields[1].value  My Test
+    Sleep  15 seconds
+    Input Text  fields[5].value  Sample
+    Select From List  fields[15].value  Alberta
+    Select From List  fields[20].value  United States
+    Select From List  fields[26].value  Home
+    Select From List  fields[29].value  Canada
+    Input Text  fields[30].value  515
+    Input Text  fields[31].value  888-8888
+    Input Text  fields[35].value  My Test
+    Click Image  css=td.formButtonBackgroundColor
+    Page Should Contain  Thank you. We have successfully updated your Shipping Information.
+    List Selection Should Be  fields[1].value  My Test
+    Textfield Value Should Be  fields[5].value  Sample
+    List Selection Should Be  fields[15].value  Alberta
+    List Selection Should Be  fields[20].value  United States
+    List Selection Should Be  fields[26].value  Home
+    List Selection Should Be  fields[29].value  Canada
+    Textfield Value Should Be  fields[30].value  515
+    Textfield Value Should Be  fields[31].value  888-8888
+    Textfield Value Should Be  fields[35].value  My Test
+    Select From List  fields[1].value  My Test
+    Sleep  15 seconds
+    Input Text  fields[5].value  An Test
+    Select From List  fields[15].value
+    Select From List  fields[20].value  United States
+    Select From List  fields[26].value  Work
+    Select From List  fields[29].value  Canada
+    Input Text  fields[30].value  417
+    Input Text  fields[31].value  999-9999
+    Input Text  fields[35].value  My Test
+    Click Image  css=td.formButtonBackgroundColor
+    Page Should Contain  Thank you. We have successfully updated your Shipping Information.
+
+Able to view added Activities/Interest Information
+    [Tags]  ProfileRep
+    Set Selenium Timeout  300
+    Open Browser  ${LOGIN URL}  ${BROWSER}
+    Maximize Browser Window
+    Click Link  VisaLogin.do?program=visacanada
+    Title Should Be  Visa Infinite Concierge -
+    Input Text  userId  ${LoginUser}
+    Input Text  password  ${LoginPassword}
+    Click Image  css=div.submitBtn
+    Comment  Input Text  answer1  test
+    Comment  Input Text  answer2  test
+    Comment  Click Image  css=div.submit.submitBtn
+    Page Should Contain Image  content/default/images/promotions/home/WineCAHome.jpg  Display wine and dine
+    Page Should Contain Image  content/default/images/promotions/home/TravelCAHome.jpg  Display Travel
+    Page Should Contain Image  content/default/images/promotions/home/ShoppingCAHome.jpg  Display Shopping
+    Page Should Contain Image  content/default/images/promotions/home/SportsCAHome.jpg  Dispayed Sport
+    Page Should Contain  wine & dine
+    Page Should Contain  spa
+    Page Should Contain  travel & hotel
+    Page Should Contain  sports & entertainment
+    Click Link  My profile
+    Click Link  Activities and Interests
+    Page Should Contain  Activities
+    Page Should Contain  Dining Preferences
+    Page Should Contain  Music Preferences
+    Page Should Contain  Sports Preferences
+    Textfield Value Should Be  fields[38].value  test
+    Textfield Value Should Be  fields[74].value  test1234
+    Textfield Value Should Be  fields[76].value  test1234
+    Textfield Value Should Be  fields[78].value  test123
+    Textfield Value Should Be  fields[107].value  test123
+    Textfield Value Should Be  fields[109].value  test1234
+    Textfield Value Should Be  fields[111].value  test1234
+
+Able to view modified Activities/Interest Information
+    [Tags]  ProfileRep  Prod1
+    Set Selenium Timeout  300
+    Open Browser  ${LOGIN URL}  ${BROWSER}
+    Maximize Browser Window
+    Click Link  VisaLogin.do?program=visacanada
+    Title Should Be  Visa Infinite Concierge -
+    Input Text  userId  ${LoginUser}
+    Input Text  password  ${LoginPassword}
+    Click Image  css=div.submitBtn
+    Comment  Input Text  answer1  test
+    Comment  Input Text  answer2  test
+    Comment  Click Image  css=div.submit.submitBtn
+    Page Should Contain Image  content/default/images/promotions/home/WineCAHome.jpg  Display wine and dine
+    Page Should Contain Image  content/default/images/promotions/home/TravelCAHome.jpg  Display Travel
+    Page Should Contain Image  content/default/images/promotions/home/ShoppingCAHome.jpg  Display Shopping
+    Page Should Contain Image  content/default/images/promotions/home/SportsCAHome.jpg  Dispayed Sport
+    Page Should Contain  wine & dine
+    Page Should Contain  spa
+    Page Should Contain  travel & hotel
+    Page Should Contain  sports & entertainment
+    Click Link  My profile
+    Click Link  Activities and Interests
+    Page Should Contain  Activities
+    Page Should Contain  Dining Preferences
+    Page Should Contain  Music Preferences
+    Page Should Contain  Sports Preferences
+    Input Text  fields[38].value  Test1
+    Input Text  fields[74].value  Test1
+    Input Text  fields[76].value  Test1
+    Input Text  fields[78].value  Test1
+    Input Text  fields[107].value  Test1
+    Input Text  fields[109].value  Test1
+    Input Text  fields[111].value  Test1
+    Click Image  css=td.formButtonBackgroundColor
+    Page Should Contain  Thank you. We have successfully updated your Activities & Interest Information.
+    Textfield Value Should Be  fields[38].value  Test1
+    Textfield Value Should Be  fields[74].value  Test1
+    Textfield Value Should Be  fields[76].value  Test1
+    Textfield Value Should Be  fields[78].value  Test1
+    Textfield Value Should Be  fields[107].value  Test1
+    Textfield Value Should Be  fields[109].value  Test1
+    Textfield Value Should Be  fields[111].value  Test1
+    Input Text  fields[38].value  test
+    Input Text  fields[74].value  test1234
+    Input Text  fields[76].value  test1234
+    Input Text  fields[78].value  test123
+    Input Text  fields[107].value  test123
+    Input Text  fields[109].value  test1234
+    Input Text  fields[111].value  test1234
+    Click Image  css=td.formButtonBackgroundColor
+    Page Should Contain  Thank you. We have successfully updated your Activities & Interest Information.
+
+Able to view added Travel Information
+    [Tags]  ProfileRep
+    Set Selenium Timeout  300
+    Open Browser  ${LOGIN URL}  ${BROWSER}
+    Maximize Browser Window
+    Click Link  VisaLogin.do?program=visacanada
+    Title Should Be  Visa Infinite Concierge -
+    Input Text  userId  ${LoginUser}
+    Input Text  password  ${LoginPassword}
+    Click Image  css=div.submitBtn
+    Comment  Input Text  answer1  test
+    Comment  Input Text  answer2  test
+    Comment  Click Image  css=div.submit.submitBtn
+    Page Should Contain Image  content/default/images/promotions/home/WineCAHome.jpg  Display wine and dine
+    Page Should Contain Image  content/default/images/promotions/home/TravelCAHome.jpg  Display Travel
+    Page Should Contain Image  content/default/images/promotions/home/ShoppingCAHome.jpg  Display Shopping
+    Page Should Contain Image  content/default/images/promotions/home/SportsCAHome.jpg  Dispayed Sport
+    Page Should Contain  wine & dine
+    Page Should Contain  spa
+    Page Should Contain  travel & hotel
+    Page Should Contain  sports & entertainment
+    Click Link  My profile
+    Click Link  Travel
+    Page Should Contain  Travel Information
+    Page Should Contain  Passport Information
+    Page Should Contain  Airline, Car Rental and Cruise Reward Programs
+    List Selection Should Be  fields[5].value  winter
+    Textfield Value Should Be  fields[8].value  test123
+    Textfield Value Should Be  fields[10].value  test123
+    Textfield Value Should Be  fields[12].value  test1234
+    Textfield Value Should Be  fields[14].value  test1234
+    Textfield Value Should Be  fields[16].value  test1234
+    Textfield Value Should Be  fields[18].value  test123
+    Textfield Value Should Be  fields[31].value  test1234
+    Textfield Value Should Be  fields[33].value  test1234
+    Textfield Value Should Be  fields[35].value  12/12/2012
+    List Selection Should Be  fields[44].value  Aeromexico
+    Textfield Value Should Be  fields[47].value  test123
+    List Selection Should Be  fields[48].value  Air Engiadina
+    Textfield Value Should Be  fields[51].value  test1234
+    List Selection Should Be  fields[52].value  Air France
+    Textfield Value Should Be  fields[55].value  test123
+    List Selection Should Be  fields[59].value  Alamo
+    Textfield Value Should Be  fields[62].value  test123
+    List Selection Should Be  fields[63].value  Dollar
+    Textfield Value Should Be  fields[66].value  test1234
+    List Selection Should Be  fields[67].value  Dollar
+    Textfield Value Should Be  fields[70].value  test123
+    List Selection Should Be  fields[74].value  Club Med Cruises
+    Textfield Value Should Be  fields[77].value  test123
+    List Selection Should Be  fields[78].value  Classic International Cruises
+    Textfield Value Should Be  fields[81].value  test1234
+    List Selection Should Be  fields[82].value  Celebration Cruise Line
+    Textfield Value Should Be  fields[85].value  test123
+
+Able to view modified Travel Information
+    [Tags]  ProfileRep  Prod1
+    Set Selenium Timeout  300
+    Open Browser  ${LOGIN URL}  ${BROWSER}
+    Maximize Browser Window
+    Click Link  VisaLogin.do?program=visacanada
+    Title Should Be  Visa Infinite Concierge -
+    Input Text  userId  ${LoginUser}
+    Input Text  password  ${LoginPassword}
+    Click Image  css=div.submitBtn
+    Comment  Input Text  answer1  test
+    Comment  Input Text  answer2  test
+    Comment  Click Image  css=div.submit.submitBtn
+    Page Should Contain Image  content/default/images/promotions/home/WineCAHome.jpg  Display wine and dine
+    Page Should Contain Image  content/default/images/promotions/home/TravelCAHome.jpg  Display Travel
+    Page Should Contain Image  content/default/images/promotions/home/ShoppingCAHome.jpg  Display Shopping
+    Page Should Contain Image  content/default/images/promotions/home/SportsCAHome.jpg  Dispayed Sport
+    Page Should Contain  wine & dine
+    Page Should Contain  spa
+    Page Should Contain  travel & hotel
+    Page Should Contain  sports & entertainment
+    Click Link  My profile
+    Click Link  Travel
+    Page Should Contain  Travel Information
+    Page Should Contain  Passport Information
+    Page Should Contain  Airline, Car Rental and Cruise Reward Programs
+    Select From List  fields[5].value  summer
+    Input Text  fields[8].value  test
+    Input Text  fields[10].value  test
+    Input Text  fields[12].value  test
+    Input Text  fields[14].value  test
+    Input Text  fields[16].value  test
+    Input Text  fields[18].value  test
+    Input Text  fields[31].value  test
+    Input Text  fields[33].value  test
+    Input Text  fields[35].value  12/12/2012
+    Select From List  fields[44].value  Air Canada
+    Input Text  fields[47].value  test
+    Select From List  fields[48].value  Air France
+    Input Text  fields[51].value  test
+    Select From List  fields[52].value  Air India
+    Input Text  fields[55].value  test
+    Select From List  fields[59].value  Avis
+    Input Text  fields[62].value  test
+    Select From List  fields[63].value  Avis
+    Input Text  fields[66].value  test
+    Select From List  fields[67].value  Avis
+    Input Text  fields[70].value  test
+    Select From List  fields[74].value  Cunard Line
+    Input Text  fields[77].value  test
+    Select From List  fields[78].value  Cunard Line
+    Input Text  fields[81].value  test
+    Select From List  fields[82].value  Cunard Line
+    Input Text  fields[85].value  test
+    Click Link  css=strong.formButtonForegroundColor
+    List Selection Should Be  fields[5].value  summer
+    Textfield Value Should Be  fields[8].value  test
+    Textfield Value Should Be  fields[10].value  test
+    Textfield Value Should Be  fields[12].value  test
+    Textfield Value Should Be  fields[14].value  test
+    Textfield Value Should Be  fields[16].value  test
+    Textfield Value Should Be  fields[18].value  test
+    Textfield Value Should Be  fields[31].value  test
+    Textfield Value Should Be  fields[33].value  test
+    Textfield Value Should Be  fields[35].value  12/12/2012
+    List Selection Should Be  fields[44].value  Air Canada
+    Textfield Value Should Be  fields[47].value  test
+    List Selection Should Be  fields[48].value  Air France
+    Textfield Value Should Be  fields[51].value  test
+    List Selection Should Be  fields[52].value  Air India
+    Textfield Value Should Be  fields[55].value  test
+    List Selection Should Be  fields[59].value  Avis
+    Textfield Value Should Be  fields[62].value  test
+    List Selection Should Be  fields[63].value  Avis
+    Textfield Value Should Be  fields[66].value  test
+    List Selection Should Be  fields[67].value  Avis
+    Textfield Value Should Be  fields[70].value  test
+    List Selection Should Be  fields[74].value  Cunard Line
+    Textfield Value Should Be  fields[77].value  test
+    List Selection Should Be  fields[78].value  Cunard Line
+    Textfield Value Should Be  fields[81].value  test
+    List Selection Should Be  fields[82].value  Cunard Line
+    Textfield Value Should Be  fields[85].value  test
+    Select From List  fields[5].value  winter
+    Input Text  fields[8].value  test123
+    Input Text  fields[10].value  test123
+    Input Text  fields[12].value  test1234
+    Input Text  fields[14].value  test1234
+    Input Text  fields[16].value  test1234
+    Input Text  fields[18].value  test123
+    Input Text  fields[31].value  test1234
+    Input Text  fields[33].value  test1234
+    Input Text  fields[35].value  12/12/2012
+    Select From List  fields[44].value  Aeromexico
+    Input Text  fields[47].value  test123
+    Select From List  fields[48].value  Air Engiadina
+    Input Text  fields[51].value  test1234
+    Select From List  fields[52].value  Air France
+    Input Text  fields[55].value  test123
+    Select From List  fields[59].value  Alamo
+    Input Text  fields[62].value  test123
+    Select From List  fields[63].value  Dollar
+    Input Text  fields[66].value  test1234
+    Select From List  fields[67].value  Dollar
+    Input Text  fields[70].value  test123
+    Select From List  fields[74].value  Club Med Cruises
+    Input Text  fields[77].value  test123
+    Select From List  fields[78].value  Classic International Cruises
+    Input Text  fields[81].value  test1234
+    Select From List  fields[82].value  Celebration Cruise Line
+    Input Text  fields[85].value  test123
+    Click Link  css=strong.formButtonForegroundColor
+

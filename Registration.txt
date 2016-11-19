@@ -1,0 +1,275 @@
+*** Settings ***
+Resource        ResourceNew/checkpoint_resource.html
+Resource        ResourceNew/object_resource.html
+Resource        ResourceNew/configuration.html
+
+*** Test Cases ***
+In Visa US site register a valid account
+    [Tags]  RegistrationUS
+    Set Selenium Timeout  300
+    Open Browser  ${LOGIN URL}  ${BROWSER}
+    Maximize Browser Window
+    Click Link  click here
+    Comment  Title Should Be  Williams-Sonoma Visa Concierge -
+    Comment  Click Link  click here
+    Input Text  cardNo  4397078000000314
+    Select From List  expirationMonth  07
+    Select From List  expirationYear  2014
+    Input Text  email  makkie000@gmail.com
+    Input Text  firstName  Cris
+    Input Text  lastName  Manuel
+    Input Text  addrLine1  81st
+    Input Text  city  manila
+    Select From List  state  New York
+    Input Text  zip  25489
+    Input Text  phoneAreaCode  908
+    Input Text  phoneNo  8908989
+    Select Checkbox  receiveNonMarketingEmail
+    Click Image  css=div.submitBtn
+    Page Should Contain  Create Your Profile
+    Click Image  css=div.submitBtn
+    Input Text  cardNo  4397078180002585
+    Select From List  expirationMonth  07
+    Select From List  expirationYear  2014
+    Input Text  email  makkie000@gmail.com
+    Input Text  firstName  Cris
+    Input Text  lastName  Manuel
+    Input Text  addrLine1  81st
+    Input Text  city  manila
+    Select From List  state  New York
+    Input Text  zip  25489
+    Input Text  phoneAreaCode  908
+    Input Text  phoneNo  8908989
+    Select Checkbox  receiveNonMarketingEmail
+    Click Image  css=div.submitBtn
+    Page Should Contain  Create Your Profile
+    Click Image  css=div.submitBtn
+
+Allowing one email to be registered for both Visa US signature and WS Platinum
+    [Tags]  RegistrationUS2
+    Set Selenium Timeout  300
+    Open Browser  ${LOGIN URL WS}  ${BROWSER}
+    Maximize Browser Window
+    Click Link  Register Now >
+    Title Should Be  Williams-Sonoma Visa Concierge -
+    Comment  Click Link  click here
+    Input Text  cardNo  4868951364691946
+    Select From List  expirationMonth  07
+    Select From List  expirationYear  2014
+    Input Text  email  makkie000@gmail.com
+    Input Text  firstName  Cris
+    Input Text  lastName  Manuel
+    Input Text  addrLine1  81st
+    Input Text  city  manila
+    Select From List  state  New York
+    Input Text  zip  25489
+    Input Text  phoneAreaCode  908
+    Input Text  phoneNo  8908989
+    Select Checkbox  receiveNonMarketingEmail
+    Click Image  css=div.submitBtn
+    Page Should Contain  Create Your Profile
+    Click Image  css=div.submitBtn
+    Input Text  cardNo  4397078000000306
+    Select From List  expirationMonth  07
+    Select From List  expirationYear  2014
+    Input Text  email  makkie000@gmail.com
+    Input Text  firstName  Cris
+    Input Text  lastName  Manuel
+    Input Text  addrLine1  81st
+    Input Text  city  manila
+    Select From List  state  New York
+    Input Text  zip  25489
+    Input Text  phoneAreaCode  908
+    Input Text  phoneNo  8908989
+    Select Checkbox  receiveNonMarketingEmail
+    Click Image  css=div.submitBtn
+    Page Should Contain  Create Your Profile
+    Click Image  css=div.submitBtn
+
+Not allowing one email to be registered for both WS Platinum and WS Signature
+    [Tags]  RegistrationWS3
+    Set Selenium Timeout  300
+    Open Browser  ${LOGIN URL WS}  ${BROWSER}
+    Maximize Browser Window
+    Click Link  Register Now >
+    Title Should Be  Williams-Sonoma Visa Concierge -
+    Comment  Click Link  click here
+    Input Text  cardNo  4868951361682518
+    Select From List  expirationMonth  07
+    Select From List  expirationYear  2014
+    Input Text  email  markroeld@gmail.com
+    Input Text  firstName  Cris
+    Input Text  lastName  Manuel
+    Input Text  addrLine1  81st
+    Input Text  city  manila
+    Select From List  state  New York
+    Input Text  zip  25489
+    Input Text  phoneAreaCode  908
+    Input Text  phoneNo  8908989
+    Select Checkbox  receiveNonMarketingEmail
+    Click Image  css=div.submitBtn
+    Page Should Contain  Create Your Profile
+    Click Image  css=div.submitBtn
+    Input Text  cardNo  4397078180012501
+    Select From List  expirationMonth  07
+    Select From List  expirationYear  2014
+    Input Text  email  markroeld@gmail.com
+    Input Text  firstName  Cris
+    Input Text  lastName  Manuel
+    Input Text  addrLine1  81st
+    Input Text  city  manila
+    Select From List  state  New York
+    Input Text  zip  25489
+    Input Text  phoneAreaCode  908
+    Input Text  phoneNo  8908989
+    Select Checkbox  receiveNonMarketingEmail
+    Click Image  css=div.submitBtn
+    Page Should Contain  This email address is already registered with another profile. Please use a different email address
+
+Not allowing one email to be registered for both WS Signature and WS Platinum
+    Set Selenium Timeout  300
+    Open Browser  ${LOGIN URL WS UAT}  ${BROWSER}
+    Maximize Browser Window
+    Click Link  Register Now >
+    Title Should Be  Williams-Sonoma Visa Concierge -
+    Comment  Click Link  click here
+    Input Text  cardNo  4397078180001538
+    Select From List  expirationMonth  07
+    Select From List  expirationYear  2014
+    Input Text  email  makkie000@gmail.com
+    Input Text  firstName  Cris
+    Input Text  lastName  Manuel
+    Input Text  addrLine1  81st
+    Input Text  city  manila
+    Select From List  state  New York
+    Input Text  zip  25489
+    Input Text  phoneAreaCode  908
+    Input Text  phoneNo  8908989
+    Select Checkbox  receiveNonMarketingEmail
+    Click Image  css=div.submitBtn
+    Page Should Contain  Create Your Profile
+    Click Image  css=div.submitBtn
+    Input Text  cardNo  4868951361682526
+    Select From List  expirationMonth  07
+    Select From List  expirationYear  2014
+    Input Text  email  makkie000@gmail.com
+    Input Text  firstName  Cris
+    Input Text  lastName  Manuel
+    Input Text  addrLine1  81st
+    Input Text  city  manila
+    Select From List  state  New York
+    Input Text  zip  25489
+    Input Text  phoneAreaCode  908
+    Input Text  phoneNo  8908989
+    Select Checkbox  receiveNonMarketingEmail
+    Click Image  css=div.submitBtn
+    Page Should Contain  This email address is already registered with another profile. Please use a different email address
+
+Visa US CH account uses WS page to register
+    Set Selenium Timeout  300
+    Open Browser  ${LOGIN URL WS UAT}  ${BROWSER}
+    Maximize Browser Window
+    Click Link  Register Now >
+    Title Should Be  Williams-Sonoma Visa Concierge -
+    Comment  Click Link  click here
+    Input Text  cardNo  4397078000000314
+    Select From List  expirationMonth  07
+    Select From List  expirationYear  2014
+    Input Text  email  makkie000@gmail.com
+    Input Text  firstName  Cris
+    Input Text  lastName  Manuel
+    Input Text  addrLine1  81st
+    Input Text  city  manila
+    Select From List  state  New York
+    Input Text  zip  25489
+    Input Text  phoneAreaCode  908
+    Input Text  phoneNo  8908989
+    Select Checkbox  receiveNonMarketingEmail
+    Click Image  css=div.submitBtn
+    Page Should Contain  Create Your Profile
+    Click Image  css=div.submitBtn
+    Input Text  userId  ${LoginUserWS}
+    Focus  password
+    Input Text  password  ${LoginPasswordWS}
+    Click Image  css=div.submitBtn
+    Comment  Input Text  answer1  up
+    Comment  Input Text  answer2  up
+    Comment  Click Image  css=div.submit.submitBtn
+    Sleep  1m
+    Page Should Contain  Welcome
+    Page Should Contain Link  Profile.do
+    Page Should Contain Link  Logout.do
+    Sleep  20m
+
+WS Signature CH account uses Visa US page to register
+    Set Selenium Timeout  300
+    Open Browser  ${LOGIN URL WS UAT}  ${BROWSER}
+    Maximize Browser Window
+    Click Link  Register Now >
+    Title Should Be  Williams-Sonoma Visa Concierge -
+    Comment  Click Link  click here
+    Input Text  cardNo  4397078000000314
+    Select From List  expirationMonth  07
+    Select From List  expirationYear  2014
+    Input Text  email  makkie000@gmail.com
+    Input Text  firstName  Cris
+    Input Text  lastName  Manuel
+    Input Text  addrLine1  81st
+    Input Text  city  manila
+    Select From List  state  New York
+    Input Text  zip  25489
+    Input Text  phoneAreaCode  908
+    Input Text  phoneNo  8908989
+    Select Checkbox  receiveNonMarketingEmail
+    Click Image  css=div.submitBtn
+    Page Should Contain  Create Your Profile
+    Click Image  css=div.submitBtn
+    Input Text  userId  ${LoginUserWS}
+    Focus  password
+    Input Text  password  ${LoginPasswordWS}
+    Click Image  css=div.submitBtn
+    Comment  Input Text  answer1
+    Comment  Input Text  answer2
+    Comment  Click Image  css=div.submit.submitBtn
+    Sleep  1m
+    Page Should Contain  Welcome
+    Page Should Contain Link  Profile.do
+    Page Should Contain Link  Logout.do
+    Sleep  20m
+
+WS Platinum CH account uses Visa US page to register
+    Set Selenium Timeout  300
+    Open Browser  ${LOGIN URL WS UAT}  ${BROWSER}
+    Maximize Browser Window
+    Click Link  Register Now >
+    Title Should Be  Williams-Sonoma Visa Concierge -
+    Comment  Click Link  click here
+    Input Text  cardNo  4397078000000314
+    Select From List  expirationMonth  07
+    Select From List  expirationYear  2014
+    Input Text  email  makkie000@gmail.com
+    Input Text  firstName  Cris
+    Input Text  lastName  Manuel
+    Input Text  addrLine1  81st
+    Input Text  city  manila
+    Select From List  state  New York
+    Input Text  zip  25489
+    Input Text  phoneAreaCode  908
+    Input Text  phoneNo  8908989
+    Select Checkbox  receiveNonMarketingEmail
+    Click Image  css=div.submitBtn
+    Page Should Contain  Create Your Profile
+    Click Image  css=div.submitBtn
+    Input Text  userId  ${LoginUserWS}
+    Focus  password
+    Input Text  password  ${LoginPasswordWS}
+    Click Image  css=div.submitBtn
+    Comment  Input Text  answer1
+    Comment  Input Text  answer2
+    Comment  Click Image  css=div.submit.submitBtn
+    Sleep  1m
+    Page Should Contain  Welcome
+    Page Should Contain Link  Profile.do
+    Page Should Contain Link  Logout.do
+    Sleep  20m
+

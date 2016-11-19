@@ -1,0 +1,156 @@
+*** Settings ***
+Library         SeleniumLibrary
+Resource        ResourceNew/checkpoint_resource.html
+Resource        ResourceNew/object_resource.html
+Resource        ResourceNew/configuration.html
+
+*** Test Cases ***
+With an existing active session WS
+    [Tags]  LoginWS1  LoginWS
+    [Setup]  Close All Browsers
+    Set Selenium Timeout  300
+    Close All Browsers
+    Open Browser  ${LOGIN URL WS}  ${BROWSER2}
+    Comment  Sleep  1m
+    Maximize Browser Window
+    Input Text  userId  ${LoginUserWS}
+    Highlight Element  password
+    Focus  password
+    Input Text  password  ${LoginPasswordWS}
+    Click Image  css=div.submitBtn
+    Comment  Input Text  answer1  up
+    Comment  Input Text  answer2  up
+    Comment  Click Image  css=div.submit.submitBtn
+    Sleep  1m
+    Page Should Contain  Welcome
+    Page Should Contain Link  Profile.do
+    Page Should Contain Link  Logout.do
+    Open Browser  ${LOGIN URL WS}  ${BROWSER}
+    Sleep  1m
+    Maximize Browser Window
+    Input Text  userId  ${LoginUserWS}
+    Focus  password
+    Input Text  password  ${LoginPasswordWS}
+    Click Image  css=div.submitBtn
+    Page Should Contain  You still have an active session. Please terminate the other session or try again later.
+    Sleep  20m
+    [Teardown]  Close All Browsers
+
+With an existing active session --> session times out WS
+    [Tags]  LoginWS2  LoginWS
+    Set Selenium Timeout  300
+    Open Browser  ${LOGIN URL WS}  ${BROWSER}
+    Sleep  1m
+    Maximize Browser Window
+    Input Text  userId  ${LoginUserWS}
+    Focus  password
+    Input Text  password  ${LoginPasswordWS}
+    Click Image  css=div.submitBtn
+    Comment  Input Text  answer1  up
+    Comment  Input Text  answer2  up
+    Comment  Click Image  css=div.submit.submitBtn
+    Sleep  1m
+    Page Should Contain  Welcome
+    Page Should Contain Link  Profile.do
+    Page Should Contain Link  Logout.do
+    Sleep  20m
+    Open Browser  ${LOGIN URL WS}  ${BROWSER}
+    Sleep  1m
+    Maximize Browser Window
+    Input Text  userId  ${LoginUserWS}
+    Focus  password
+    Input Text  password  ${LoginPasswordWS}
+    Click Image  css=div.submitBtn
+    Comment  Input Text  answer1  up
+    Comment  Input Text  answer2  up
+    Comment  Click Image  css=div.submit.submitBtn
+    Page Should Contain  Welcome
+    Page Should Contain Link  Profile.do
+    Page Should Contain Link  Logout.do
+    [Teardown]  Log Out
+
+With an existion active session --> user logs out WS
+    [Tags]  LoginWS3  LoginWS
+    Set Selenium Timeout  300
+    Open Browser  ${LOGIN URL WS}  ${BROWSER}
+    Maximize Browser Window
+    Input Text  userId  ${LoginUserWS}
+    Focus  password
+    Input Text  password  ${LoginPasswordWS}
+    Click Image  css=div.submitBtn
+    Comment  Input Text  answer1  up
+    Comment  Input Text  answer2  up
+    Comment  Click Image  css=div.submit.submitBtn
+    Sleep  1m
+    Page Should Contain  Welcome
+    Page Should Contain Link  Profile.do
+    Page Should Contain Link  Logout.do
+    Log Out
+    Open Browser  ${LOGIN URL WS}  ${BROWSER}
+    Maximize Browser Window
+    Input Text  userId  ${LoginUserWS}
+    Focus  password
+    Input Text  password  ${LoginPasswordWS}
+    Click Image  css=div.submitBtn
+    Comment  Input Text  answer1  up
+    Comment  Input Text  answer2  up
+    Comment  Click Image  css=div.submit.submitBtn
+    Sleep  1m
+    Page Should Contain  Welcome
+    Page Should Contain Link  Profile.do
+    Page Should Contain Link  Logout.do
+    [Teardown]  Log Out
+
+With an existing active session --> browser is closed / machine restarted WS
+    [Tags]  LoginWS4  LoginWS
+    [Template]
+    Set Selenium Timeout  300
+    Open Browser  ${LOGIN URL WS}  ${BROWSER}
+    Maximize Browser Window
+    Input Text  userId  ${LoginUserWS}
+    Focus  password
+    Input Text  password  ${LoginPasswordWS}
+    Click Image  css=div.submitBtn
+    Comment  Input Text  answer1  up
+    Comment  Input Text  answer2  up
+    Comment  Click Image  css=div.submit.submitBtn
+    Sleep  1m
+    Page Should Contain  Welcome
+    Page Should Contain Link  Profile.do
+    Page Should Contain Link  Logout.do
+    Close Browser
+    Open Browser  ${LOGIN URL WS}  ${BROWSER}
+    Maximize Browser Window
+    Input Text  userId  ${LoginUserWS}
+    Focus  password
+    Input Text  password  ${LoginPasswordWS}
+    Click Image  css=div.submitBtn
+    Page Should Contain  You still have an active session. Please terminate the other session or try again later.
+    Sleep  20m
+    [Teardown]  Close All Browsers
+
+no existing session WS
+    [Tags]  LoginWS5  LoginWS
+    Set Selenium Timeout  300
+    Open Browser  ${LOGIN URL WS}  ${BROWSER}
+    Maximize Browser Window
+    Input Text  userId  ${LoginUserWS}
+    Focus  password
+    Page Should Contain Textfield  password
+    Input Password  password  ${LoginPasswordWS}
+    Comment  Click Element  password  ${LoginPasswordWS}
+    Comment  Input Text  password  ${LoginPasswordWS}
+    Click Image  css=div.submitBtn
+    Comment  Input Text  answer1  up
+    Comment  Input Text  answer2  up
+    Comment  Click Image  css=div.submit.submitBtn
+    Comment  Page Should Contain  wine & dine
+    Comment  Page Should Contain  spa
+    Comment  Page Should Contain  travel & hotel
+    Comment  Page Should Contain  sports & entertainment
+    Sleep  1m
+    Page Should Contain  Welcome
+    Page Should Contain Link  Profile.do
+    Page Should Contain Link  Logout.do
+    [Teardown]  Log Out
+

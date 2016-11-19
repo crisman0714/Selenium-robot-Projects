@@ -1,0 +1,233 @@
+*** Settings ***
+Library         SeleniumLibrary
+Resource        ResourceNew/checkpoint_resource.html
+Resource        ResourceNew/object_resource.html
+Resource        ResourceNew/configuration.html
+
+*** Test Cases ***
+Able to submit request for Wine & Dine
+    [Tags]  Request1  Prod1
+    Set Selenium Timeout  300
+    Open Browser  ${LOGIN URL}  ${BROWSER}
+    Maximize Browser Window
+    Click Link  VisaLogin.do?program=visacanada
+    Title Should Be  Visa Infinite Concierge -
+    Input Text  userId  ${LoginUser}
+    Input Text  password  ${LoginPassword}
+    Click Image  css=div.submitBtn
+    Comment  Input Text  answer1  test
+    Comment  Input Text  answer2  test
+    Comment  Click Image  css=div.submit.submitBtn
+    Page Should Contain Image  content/default/images/promotions/home/WineCAHome.jpg  Display wine and dine
+    Page Should Contain Image  content/default/images/promotions/home/TravelCAHome.jpg  Display Travel
+    Page Should Contain Image  content/default/images/promotions/home/ShoppingCAHome.jpg  Display Shopping
+    Page Should Contain Image  content/default/images/promotions/home/SportsCAHome.jpg  Dispayed Sport
+    Page Should Contain  wine & dine
+    Page Should Contain  spa
+    Page Should Contain  travel & hotel
+    Page Should Contain  sports & entertainment
+    Click Link  wine & dine
+    Click Image  css=a.rightnav.underlined > ul > li
+    Page Should Contain  Request a dining reservation
+    Input Text  fields[1].value  Sample
+    Input Text  fields[3].value  Sample
+    Input Text  fields[5].value  3
+    Input Text  fields[8].value  12/12/2012
+    Input Text  fields[11].value  12:12
+    Input Text  fields[13].value  Sample
+    Input Text  fields[15].value  Sample
+    Input Text  fields[18].value  Sample
+    Select Checkbox  fields[45].value
+    Click Image  css=strong.formButtonForegroundColor
+    Page Should Contain  Request Submitted
+
+Able to submit request for Travel & Hotel
+    [Tags]  Request1
+    Set Selenium Timeout  300
+    Open Browser  ${LOGIN URL}  ${BROWSER}
+    Maximize Browser Window
+    Click Link  VisaLogin.do?program=visacanada
+    Title Should Be  Visa Infinite Concierge -
+    Input Text  userId  ${LoginUser}
+    Input Text  password  ${LoginPassword}
+    Click Image  css=div.submitBtn
+    Comment  Input Text  answer1  test
+    Comment  Input Text  answer2  test
+    Comment  Click Image  css=div.submit.submitBtn
+    Page Should Contain Image  content/default/images/promotions/home/WineCAHome.jpg  Display wine and dine
+    Page Should Contain Image  content/default/images/promotions/home/TravelCAHome.jpg  Display Travel
+    Page Should Contain Image  content/default/images/promotions/home/ShoppingCAHome.jpg  Display Shopping
+    Page Should Contain Image  content/default/images/promotions/home/SportsCAHome.jpg  Dispayed Sport
+    Page Should Contain  wine & dine
+    Page Should Contain  spa
+    Page Should Contain  travel & hotel
+    Page Should Contain  sports & entertainment
+    Click Link  travel & hotel
+    Click Image  css=a.rightnav.underlined > ul > li
+    Page Should Contain  Request a dining reservation
+    Input Text  fields[1].value  Sample
+    Input Text  fields[3].value  Sample
+    Input Text  fields[5].value  3
+    Input Text  fields[8].value  12/12/2012
+    Input Text  fields[11].value  12:12
+    Input Text  fields[13].value  Sample
+    Input Text  fields[15].value  Sample
+    Input Text  fields[18].value  Sample
+    Select Checkbox  fields[45].value
+    Click Image  css=strong.formButtonForegroundColor
+    Page Should Contain  Request Submitted
+
+Able to submit request for Sports & Entertainment
+    [Tags]  Request3
+    Set Selenium Timeout  300
+    Open Browser  ${LOGIN URL}  ${BROWSER}
+    Maximize Browser Window
+    Click Link  VisaLogin.do?program=visacanada
+    Title Should Be  Visa Infinite Concierge -
+    Input Text  userId  ${LoginUser}
+    Input Text  password  ${LoginPassword}
+    Click Image  css=div.submitBtn
+    Comment  Input Text  answer1  test
+    Comment  Input Text  answer2  test
+    Comment  Click Image  css=div.submit.submitBtn
+    Page Should Contain Image  content/default/images/promotions/home/WineCAHome.jpg  Display wine and dine
+    Page Should Contain Image  content/default/images/promotions/home/TravelCAHome.jpg  Display Travel
+    Page Should Contain Image  content/default/images/promotions/home/ShoppingCAHome.jpg  Display Shopping
+    Page Should Contain Image  content/default/images/promotions/home/SportsCAHome.jpg  Dispayed Sport
+    Page Should Contain  wine & dine
+    Page Should Contain  spa
+    Page Should Contain  travel & hotel
+    Page Should Contain  sports & entertainment
+    Click Link  sports & entertainment
+    Click Image  css=a.rightnav > ul > li
+    Page Should Contain  Book tickets or request event info
+    Select From List  fields[1].value  Sports
+    Input Text  fields[3].value  Sample
+    Input Text  fields[5].value  Sample
+    Input Text  fields[8].value  12/12/2012
+    Input Text  fields[11].value  12/12/2012
+    Input Text  fields[13].value  10
+    Input Text  fields[15].value  2000
+    Input Text  fields[18].value  Sample
+    Select Checkbox  fields[45].value
+    Click Image  css=strong.formButtonForegroundColor
+    Page Should Contain  Request Submitted
+
+Able to submit request for Shopping
+    [Tags]  Request3
+    Set Selenium Timeout  300
+    Open Browser  ${LOGIN URL}  ${BROWSER}
+    Maximize Browser Window
+    Click Link  VisaLogin.do?program=visacanada
+    Title Should Be  Visa Infinite Concierge -
+    Input Text  userId  ${LoginUser}
+    Input Text  password  ${LoginPassword}
+    Click Image  css=div.submitBtn
+    Comment  Input Text  answer1  test
+    Comment  Input Text  answer2  test
+    Comment  Click Image  css=div.submit.submitBtn
+    Page Should Contain Image  content/default/images/promotions/home/WineCAHome.jpg  Display wine and dine
+    Page Should Contain Image  content/default/images/promotions/home/TravelCAHome.jpg  Display Travel
+    Page Should Contain Image  content/default/images/promotions/home/ShoppingCAHome.jpg  Display Shopping
+    Page Should Contain Image  content/default/images/promotions/home/SportsCAHome.jpg  Dispayed Sport
+    Page Should Contain  wine & dine
+    Page Should Contain  spa
+    Page Should Contain  travel & hotel
+    Page Should Contain  shopping
+    Page Should Contain  sports & entertainment
+    Click Link  shopping
+    Click Image  css=a.rightnav > ul > li
+    Page Should Contain  Send flowers
+    Input Text  fields[1].value  Sample
+    Select From List  fields[3].value  holiday
+    Input Text  fields[5].value  Sample
+    Input Text  fields[8].value  12/12/2012
+    Select From List  fields[10].value  Hawaii
+    Input Text  fields[13].value  Sample
+    Input Text  fields[16].value  Sample
+    Select Checkbox  fields[43].value
+    Click Image  css=strong.formButtonForegroundColor
+    Page Should Contain  Request Submitted
+
+Able to submit request for Spas
+    [Tags]  Request8
+    Set Selenium Timeout  300
+    Open Browser  ${LOGIN URL}  ${BROWSER}
+    Maximize Browser Window
+    Click Link  VisaLogin.do?program=visacanada
+    Title Should Be  Visa Infinite Concierge -
+    Input Text  userId  ${LoginUser}
+    Input Text  password  ${LoginPassword}
+    Click Image  css=div.submitBtn
+    Comment  Input Text  answer1  test
+    Comment  Input Text  answer2  test
+    Comment  Click Image  css=div.submit.submitBtn
+    Page Should Contain Image  content/default/images/promotions/home/WineCAHome.jpg  Display wine and dine
+    Page Should Contain Image  content/default/images/promotions/home/TravelCAHome.jpg  Display Travel
+    Page Should Contain Image  content/default/images/promotions/home/ShoppingCAHome.jpg  Display Shopping
+    Page Should Contain Image  content/default/images/promotions/home/SportsCAHome.jpg  Dispayed Sport
+    Page Should Contain  wine & dine
+    Page Should Contain  spa
+    Page Should Contain  travel & hotel
+    Page Should Contain  shopping
+    Page Should Contain  sports & entertainment
+    Click Link  spas
+    Click Image  css=a.rightnav > ul > li
+    Page Should Contain  Make a reservation
+    Input Text  fields[1].value  day spa
+    Input Text  fields[3].value  holiday
+    Input Text  fields[6].value  12/12/2012
+    Input Text  fields[9].value  12/12/2012
+    Input Text  fields[11].value  Hawaii
+    Input Text  fields[13].value  2
+    Select From List  fields[15].value  $500- per night
+    Select Checkbox  fields[17].value
+    Input Text  fields[21].value  holiday
+    Select Checkbox  fields[48].value
+    Click Image  css=strong.formButtonForegroundColor
+    Page Should Contain  Request Submitted
+
+Able to submit inquiry about an offer
+    [Tags]  Request3
+    Set Selenium Timeout  300
+    Open Browser  ${LOGIN URL}  ${BROWSER}
+    Maximize Browser Window
+    Click Link  VisaLogin.do?program=visacanada
+    Title Should Be  Visa Infinite Concierge -
+    Input Text  userId  ${LoginUser}
+    Input Text  password  ${LoginPassword}
+    Click Image  css=div.submitBtn
+    Comment  Input Text  answer1  test
+    Comment  Input Text  answer2  test
+    Comment  Click Image  css=div.submit.submitBtn
+    Page Should Contain Image  content/default/images/promotions/home/WineCAHome.jpg  Display wine and dine
+    Page Should Contain Image  content/default/images/promotions/home/TravelCAHome.jpg  Display Travel
+    Page Should Contain Image  content/default/images/promotions/home/ShoppingCAHome.jpg  Display Shopping
+    Page Should Contain Image  content/default/images/promotions/home/SportsCAHome.jpg  Dispayed Sport
+    Page Should Contain  wine & dine
+    Page Should Contain  spa
+    Page Should Contain  travel & hotel
+    Page Should Contain  shopping
+    Page Should Contain  sports & entertainment
+    Click Link  Email your request
+    Page Should Contain  Place your request
+    Input Text  fields[1].value  Sample
+    Click Image  css=strong.formButtonForegroundColor
+    Page Should Contain  Request Submitted
+
+Able to submit request (generic request)
+    [Tags]  Request3
+    Set Selenium Timeout  300
+    Open Browser  ${LOGIN URL}  ${BROWSER}
+    Maximize Browser Window
+    Click Link  VisaLogin.do?program=visacanada
+    Title Should Be  Visa Infinite Concierge -
+    Input Text  userId  ${LoginUser}
+    Input Text  password  ${LoginPassword}
+    Click Image  css=div.submitBtn
+    Click Image  css=div.passwordFont.forgotBtn
+    Page Should Contain  Forgot Answers to Security Questions
+    Input Text  email  ${LoginUser}
+    Click Image  css=strong
+    Page Should Contain  Email sent
+
